@@ -8,9 +8,11 @@ if (isset($this->session->userdata['logged_in'])) {
     header("location: login");
 }
 
-$this->load->view('login/insideheader/header');
+$this->load->view('header/top');
 ?>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>others/css/menu.css">
+<br>
+<br>
+
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
 <style>
     th,
@@ -19,7 +21,7 @@ $this->load->view('login/insideheader/header');
     }
 </style>
 <input id="myInput" type="text" placeholder="Search..">
-<table class="table table-hover">
+<table class="table ">
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -41,11 +43,25 @@ $this->load->view('login/insideheader/header');
                 <th scope="row"><?php echo $user->user_id; ?></th>
                 <td><?php echo $user->first_name; ?></td>
                 <td><?php echo $user->last_name; ?></td>
-                <td><?php echo $user->username; ?></td>
-                <td><?php echo $user->password; ?></td>
+                <td><?php echo base64_decode($user->username); ?></td>
+                <td><?php echo base64_decode($user->password); ?></td>
                 <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->permission; ?></td>
-                <td><i class="edit fas fa-user-edit" data-toggle="modal" data-target="#exampleModal" data-id="<?php echo $user->user_id; ?>"></i> <i class="remove fas fa-user-times" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $user->user_id; ?>"></i></td>
+                <?php if($user->permission == 0){?>
+                    <td>Admin</td>
+                <?php }else{?>
+                    <td>Normal User</td>
+                <?php }?>
+                <td><i class="edit fas fa-user-edit" data-toggle="modal" data-target="#exampleModal"
+                 data-id="<?php echo $user->user_id; ?>" 
+                 data-first_name="<?php echo $user->first_name; ?>"
+                 data-last_name="<?php echo $user->last_name; ?>"
+                 data-username="<?php echo base64_decode( $user->username); ?>"
+                 data-password="<?php echo base64_decode( $user->password); ?>"
+                 data-email="<?php echo $user->email; ?>"
+                 data-permission="<?php echo $user->permission; ?>"
+
+                
+                ></i> <i class="remove fas fa-user-times" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $user->user_id; ?>" data-username="<?php echo base64_decode($user->username); ?>"></i></td>
             </tr>
         <?php
         }
@@ -59,7 +75,6 @@ $this->load->view('login/insideheader/header');
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="user_id_top">User id:</h5>
-
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -72,11 +87,11 @@ $this->load->view('login/insideheader/header');
 
                 echo form_open('mod_user');
                 ?>
-
+                
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">First Name:</label>
                     
-                    <?php echo form_input('first_name', "$user->first_name", 'id="first_name" class="form-control"'); ?>
+                    <?php echo form_input('first_name', "2", 'id="first_name" class="form-control"'); ?>
                 </div>
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">Last Name:</label>
@@ -114,15 +129,10 @@ $this->load->view('login/insideheader/header');
                 </div>
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">User Type:</label>
-                    <?php $data1 = array(
-                        'type' => 'number',
-                        'name' => 'permissions',
-                        'class' => 'form-control',
-                        'value' => "$user->permission",
-                        'id' => 'permissions'
-                    );
-                    echo "<br/>";
-                    echo form_input($data1); ?>
+                    <select name="permission" id="permission">
+                        <option value="0">Admin</option>
+                        <option value="1">Normal User</option>
+                    </select> 
                     <?php echo form_input('user_id', "$user->user_id", 'id="user_id" class="form-control" style="visibility: hidden"'); ?>
                 </div>
 
@@ -196,17 +206,26 @@ $this->load->view('login/insideheader/header');
         var user_id =document.getElementById('user_id')
         user_id.value = my_user_id
         top_user_id.innerHTML  = "User Id: " + my_user_id
+        var selectElement = document.querySelector('#permission');
+
+
+        $('input[name=first_name]').val($(this).data('first_name'));
+        $('input[name=last_name]').val($(this).data('last_name'));
+        $('input[name=username]').val($(this).data('username'));
+        $('input[name=password]').val($(this).data('password'));
+        $('input[name=user_email]').val($(this).data('email'));
+        selectElement.value = $(this).data('permission');
+
     });
+//                var_dump($users[1]);
 
     $(document).on("click", ".remove", function () {
         var my_user_id = $(this).data('id');
         var top_user_id =document.getElementById('user_id_top_delete')
         var top_user_name =document.getElementById('user_name_top_delete')
-        var user_id =document.getElementById('userid_delete')
-        //alert('<?php echo array_search('6', $users)?>')
         user_id.value = my_user_id
         top_user_id.innerHTML  = "User Id: " + my_user_id
-        top_user_name.innerHTML  = "User Name: " + top_user_name
+        top_user_name.innerHTML  = "User Name: " + $(this).data('username')
     });
 </script>
 <?php

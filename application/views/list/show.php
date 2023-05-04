@@ -126,7 +126,7 @@ document.getElementById("full").className = "active";
       </a>
       <div class="my-div">
         <?php foreach ($myArray as $genreshow) {?>
-              <a href="<?= base_url() ?>index.php/display/genre/<?= $genreshow ?>" target="_blank"><?php echo $genreshow?></a>
+              <a href="<?= base_url() ?>index.php/genre/<?= $genreshow ?>" target="_blank"><?php echo $genreshow?></a>
         <?php } ?></br>
         <?php echo $content[0]->title?>
         <?php echo $content[0]->title?>

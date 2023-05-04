@@ -14,32 +14,43 @@ if (isset($this->session->userdata['logged_in'])) {
     $this->load->view('login/insideheader/headernotlog');
     $user_id = 0;
 }
-
+if(!empty($checkuserblocked)|| !isset($this->session->userdata['logged_in'])){
+  $checkuserblocked = array();
+if(($key = array_search($user_id, $checkuserblocked)) !== false){
+}else{
 ?>
 
-<head>
-    <title>Admin Page</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>others/css/menu.css">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-</head>
+<div class="container-fluid no-padding">
+    <div id="my-row" class="row">
+      <div class="col-sm-1" >
+      </div>
+      <div class="col-sm-7"  >
+    </div>
+    <?php if(isset($this->session->userdata['logged_in']) && $user_id==$user_id_prof){?>
 
-<body>
+    <div class="col-sm-3"  >
+    <p data-target='#modaladdlist' data-toggle='modal' alt='banner' width='10%' >Add list</p><br>
+
+    </div>
+    <?php }?>
+
+    <div class="col-sm-1" ></div>
+</div>
+</div>
+
    <?php 
    $uri = $_SERVER['REQUEST_URI']; 
    $profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
    $profileId = strtok($profileId, '/');
-   
-   
-   
-   if($user_id_prof != $user_id){
-      if($followprofile == 0){
-        ?><button type="button" class="btn btn-success"onclick='window.location="<?= base_url() ?>index.php/follow/<?= $user_id_prof?>"'>Follow</button><br><?php
+   ?>
 
-      }else if($followprofile == $user_id_prof){
-        ?> <button type="button" class="btn btn-success"onclick='window.location="<?= base_url() ?>index.php/unfollow/<?= $user_id_prof?>"'>Unfollow</button><br><?php
-
-      }
-   }
+<div class="container-fluid no-padding">
+    <div id="my-row" class="row">
+      <div class="col-sm-1" >
+      </div>
+      <div class="col-sm-10"  >
+      <?php
+   
 
    if(!empty($state[0])){
     if($user_id_prof == $user_id){
@@ -53,27 +64,31 @@ if (isset($this->session->userdata['logged_in'])) {
         foreach($contents as $content){ 
             if($user_id_prof == $user_id){
             ?>
-                <a href="<?= base_url() ?>index.php/profile/<?= $profileId ?>/list/<?= $content->list_id ?>"  ><?php echo $content->title?></a>
+                <a href="<?= base_url() ?>index.php/profile/<?= $profileId ?>/list/<?= $content->list_id ?>"  ><?php echo $content->title?>
                 <?php 
-                if(1==1){//if the image list is empty it means the user never changed so it uses the first item from the list as a background one
-                    echo "List Image: ".$content->images.'<br><br>';
+                if(empty($content->image)){//if the image list is empty it means the user never changed so it uses the first item from the list as a background one
+                    echo "<img src='../../../../uploads/".$content->images."'class='myImages'id='myImg' alt='List_image' width='10%' ><br>";
 
                 }else{
-                    echo "List Image: ".$content->image.'<br><br>';
+                    echo "<img src='../../../../uploads/".$content->image."'class='myImages'id='myImg' alt='List_image' width='10%' ><br>";
+                }?>
+                  </a>
+                <?php
 
-                }
             }else if($content->list_public == 1){
               ?>
-                <a href="<?= base_url() ?>index.php/profile/<?= $profileId ?>/list/<?= $content->list_id ?>"  ><?php echo $content->title?></a>
+                <a href="<?= base_url() ?>index.php/profile/<?= $profileId ?>/list/<?= $content->list_id ?>"  ><?php echo $content->title?><
                 
                 <?php 
-                if(1==1){//if the image list is empty it means the user never changed so it uses the first item from the list as a background one
-                    echo "List Image: ".$content->images.'<br><br>';
-
+                if(empty($content->image)){//if the image list is empty it means the user never changed so it uses the first item from the list as a background one
+                    echo "<img src='../../../../uploads/".$content->images."'class='myImages'id='myImg' alt='List_image' width='10%' ><br>";
                 }else{
-                    echo "List Image: ".$content->image.'<br><br>';
+                    echo "<img src='../../../../uploads/".$content->image."'class='myImages'id='myImg' alt='List_image' width='10%' ><br>";
 
                 }
+                ?>
+                  </a>
+                <?php
             }
         }
         
@@ -82,9 +97,64 @@ if (isset($this->session->userdata['logged_in'])) {
     }
     }
    ?>
+    </div>
 
-
-
+    <div class="col-sm-1" ></div>
+</div>
+</div>
    
-</body>
-</html>
+
+
+
+<div class="modal" id="modaladdlist" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <?php
+            echo "<div class='error_msg'>";
+            echo validation_errors();
+            echo "</div>";
+            echo form_open_multipart('newcustomlist/'.$user_id);
+            echo form_label('Title : ');
+            echo "<br/>";
+
+            echo form_input('title');
+            echo "<div class='error_msg'>";
+            if (isset($message_display)) {
+                echo $message_display;
+            }
+            echo "</div>";
+            echo "<br/>";
+            echo form_label('Image : ');
+            echo "<br/>";
+            ?>
+            <input type="file" name="image" size="20" />
+            <?php
+            echo "<br/>";
+            echo "<br/>";
+            echo form_label('Privacy : ');
+           ?>
+          <select id="list_publicy" name="list_public">
+              <option value="0">Private</option>
+              <option value="1">Public</option>
+             
+            </select>
+            <?php
+            echo "<br/>";
+            echo form_submit('submit', 'Create List');
+            echo form_close();
+            ?>
+      </div>
+    </div>
+</div>
+</div>
+<?php
+}
+}
+$this->load->view('header/bottom');
+?>

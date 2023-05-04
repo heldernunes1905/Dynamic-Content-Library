@@ -12,46 +12,83 @@ if (isset($this->session->userdata['logged_in'])) {
     $user_id = 0;
 }
 
+if(!empty($checkuserblocked) || !isset($this->session->userdata['logged_in']) || isset($this->session->userdata['logged_in'])){    
+
+    $checkuserblocked = array();
+
+if(($key = array_search($user_id, $checkuserblocked)) !== false){
+}else{
 ?>
 
-<head>
-    <title>Admin Page</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>others/css/menu.css">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-</head>
-
-<body>
    <?php 
-
         $uri = $_SERVER['REQUEST_URI']; 
         $profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
         $profileId = strtok($profileId, '/');
         $finalword = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/","",$uri);
-        if($state[0]->profile_state == 1){
-        if($finalword == "following/"){
+        if($state[0]->profile_state == 1){?>
+
+        <div class="container-fluid no-padding">
+            <div id="my-row" class="row">
+            <div class="col-sm-1" >
+            </div>
+            <div class="col-sm-10"  >
+                <div class="row">
+            <?php if($finalword == "following/"){
             if(!empty($follows[0])){
                 foreach($follows as $f){?>
+                    <?php if(isset($this->session->userdata['logged_in']) && $user_id==$profileId){?>
+                    <div class="col-sm-2"  >
                     <a href="<?= base_url() ?>index.php/profile/<?= $f[0]->user_id ?>">
-                        <?php echo $f[0]->avatar; 
-                        echo $f[0]->user_id; 
-                        echo $f[0]->username; ?>
-                    </a><br>
+                    <img src='../../../../uploads/<?php echo $f[0]->avatar?>'class='myImages' width="100%" alt='<?php echo $f[0]->avatar?>' >
+                        </div>
+                    </a>
+                    <div class="col-sm-2" >
+                    <?php 
+                        echo "<p>".base64_decode($f[0]->username)."</p>"; ?>
+                    </div>
                     <?php if($user_id != 0){?>
+                    <div class="col-sm-2"  >
                     <button type="button" class="btn btn-success"onclick='window.location="<?= base_url() ?>index.php/unfollow/<?= $f[0]->user_id?>"'>Unfollow</button><br>
                     <?php } ?>
-                <?php }
+                    </div>
+                    <?php }else { ?>
+                        <div class="col-sm-3"  >
+                    <a href="<?= base_url() ?>index.php/profile/<?= $f[0]->user_id ?>">
+                    <img src='../../../../uploads/<?php echo $f[0]->avatar?>'class='myImages' width="100%" alt='<?php echo $f[0]->avatar?>' >
+                        </div>
+                    </a>
+                    <div class="col-sm-3" >
+                    <?php 
+                        echo "<p>".base64_decode($f[0]->username)."</p>"; ?>
+                    </div>
+                    <?php } ?>
+                <?php } ?>
+                <?php
             }else{
                 echo "YOU DONT FOLLOW ANYONE CURRENTLY";
              }
+
+
         }else{
+            
             if(!empty($follows[0])){
                 foreach($follows as $f){?>
+                    <?php if(isset($this->session->userdata['logged_in']) && $user_id==$profileId){?>
+
+                    <div class="col-sm-2"  >
+
                     <a href="<?= base_url() ?>index.php/profile/<?= $f[0]->user_id ?>">
-                    <?php echo $f[0]->avatar; 
-                    echo $f[0]->user_id; 
-                    echo $f[0]->username; ?>
-                    </a><br>
+                    <img src='../../../../uploads/<?php echo $f[0]->avatar?>'class='myImages' width="100%" alt='<?php echo $f[0]->avatar?>' >
+
+                    </a>
+                    </div>
+                    <div class="col-sm-2"  >
+
+                    <?php echo "<p>".base64_decode($f[0]->username)."</p>"; ?>
+                    </div>
                     <?php if($user_id != 0){?>
+                        <div class="col-sm-2"  >
+
                     <?php if(!empty($f[0]->following)){?>
                         <button type="button" class="btn btn-success"onclick='window.location="<?= base_url() ?>index.php/unfollow/<?= $f[0]->user_id?>"'>Unfollow</button><br>
                     <?php }else{ ?>
@@ -59,12 +96,39 @@ if (isset($this->session->userdata['logged_in'])) {
 
                     <?php }?>
                     <?php } ?>
+                    </div>
+                    <?php }else{ ?>
+                           <div class="col-sm-3"  >
 
-         <?php } 
+                            <a href="<?= base_url() ?>index.php/profile/<?= $f[0]->user_id ?>">
+                            <img src='../../../../uploads/<?php echo $f[0]->avatar?>'class='myImages' width="100%" alt='<?php echo $f[0]->avatar?>' >
+
+                            </a>
+                            </div>
+                            <div class="col-sm-3"  >
+
+                            <?php echo "<p>".base64_decode($f[0]->username)."</p>"; ?>
+                            </div>
+         <?php }
+         } 
          }
-        }
-    }
-    ?>
-</body>
+        } ?>
+            </div>
+            </div>
+            <div class="col-sm-1" >
+            
+            </div>
+        </div>
+        
+        
 
-</html>
+
+
+
+    <?php }
+    ?>
+<?php
+}
+}
+$this->load->view('header/bottom');
+?>
