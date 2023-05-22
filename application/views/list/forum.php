@@ -48,7 +48,7 @@
 
       </div>
       <div class="col-sm-2" >
-      <p data-target='#modaladdthread' data-toggle='modal' alt='banner' width='10%' >Add Thread</p>
+      <p data-target='#modaladdthread' data-toggle='modal' alt='banner' width='10%' >Add Forum</p>
       <?php } ?>
       </div>
       
@@ -108,7 +108,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" data-target='#modalcreatelist' data-toggle='modal' alt='banner' width='10%' >Create Thread<br></h5>
+        <h5 class="modal-title" data-target='#modalcreatelist' data-toggle='modal' alt='banner' width='10%' >Create Forum<br></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -226,7 +226,7 @@ $(document).on("click", ".edit", function () {
         var thread_id_top =document.getElementById('thread_id_top')
         var thread_id_mod =document.getElementById('thread_id_mod')
         thread_id_mod.value = thread_id
-        thread_id_top.innerHTML  = "Thread Id: " + thread_id
+        thread_id_top.innerHTML  = "Forum Id: " + thread_id
         var selectElement = document.querySelector('#public_edit');
 
         $('input[name=title_mod_thread]').val($(this).data('title'));
@@ -244,7 +244,7 @@ $(document).on("click", ".remove", function () {
 
         var thread_id_delete =document.getElementById('thread_id_delete')
         thread_id_delete.value = thread_id
-        thread_id_top_delete.innerHTML  = "Thread Id: " + thread_id
+        thread_id_top_delete.innerHTML  = "Forum Id: " + thread_id
         thread_title_delete.innerHTML  = "Title: " + $(this).data('title')
         thread_desc_delete.innerHTML  = "Description: " + $(this).data('description')
 

@@ -73,6 +73,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /* Ratings widget */
 .rate {
     display: inline-block;
+    vertical-align: top;
+    margin-top: 0; 
     border: 0;
 }
 /* Hide radio */
@@ -263,7 +265,8 @@ if (!empty($useraddlist)) {
     if ($content->contentId == $addlist[0]) {
       switch ($addlist[1]) {
         case 0:?>
-          
+                    <label for="list">choose:</label>
+
           <select name="list" id="list">
             <option value="0" selected>No list</option>
             <option value="1" >watched</option>
@@ -274,7 +277,8 @@ if (!empty($useraddlist)) {
           <?php 
           break;
         case 1:?>
-          
+                    <label for="list">choose:</label>
+
           <select name="list" id="list">
             <option value="0" >No list</option>
             <option value="1" selected >watched</option>
@@ -286,8 +290,8 @@ if (!empty($useraddlist)) {
           break;
         case 2:
           ?>
-          
-          <label for="list">choose:</label>
+                    <label for="list">choose:</label>
+
           <select name="list" id="list">
             <option value="0"  >No list</option>
             <option value="1" >watched</option>
@@ -750,6 +754,9 @@ if(isset($this->session->userdata['logged_in'])){
     }
   }
   }
+  if(!isset($this->session->userdata['logged_in'])){?>
+    <h1 data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Leave Review</h1>
+  <?php }
 ?>
 </div>
        <div class="col-sm-1" >
@@ -958,10 +965,17 @@ function displayResults(inputId, resultsId, containerId, filteredItems, resultsL
         }
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
+		div.classList.add("result-highlight");
+
+		div.style.background = "#ddd";
+		div.style.color = "black";
+
       });
       div.addEventListener("mouseleave", function() {
         div.classList.remove("result-highlight");
+		div.style.background = "";
+		div.style.color = "";
+
       });
       resultsContainer.appendChild(div);
     });

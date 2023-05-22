@@ -32,7 +32,7 @@ $this->load->view('header/top');
       if(empty($contents[0])){
         $listId=0;
       }else{
-        if(empty($contentslist)){
+        if(empty($contentslist[0][0]->list_id)){
           $listId = $contents[0]->list_id;
         }else{
           $listId = $contentslist[0][0]->list_id;
@@ -313,8 +313,18 @@ $this->load->view('header/top');
    <?php
 
 if(!empty($state[0])){
-  if($state[0]->profile_state == 0){
-      echo "<h1>You cannot view this profile</h1>";
+  if($state[0]->profile_state == 0){ ?>
+<div id="my-row" class="row">
+      <div class="col-sm-1" >
+      </div>
+      <div class="col-sm-10"><?php
+            echo "<h1>You cannot view this profile</h1>";
+    ?> </div>
+    <div class="col-sm-1" >
+      </div>
+  </div>
+  </div>
+  <?php
   }else{
     
       ?>    

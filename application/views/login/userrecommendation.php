@@ -18,8 +18,8 @@ if (isset($this->session->userdata['logged_in'])) {
  if(!empty($checkuserblocked)|| !isset($this->session->userdata['logged_in'])){
   $checkuserblocked = array();
 
-if(($key = array_search($user_id, $checkuserblocked)) !== false){
-}else{
+  if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0){
+  }else{
 ?>
 
 <div class="container-fluid no-padding">
@@ -212,10 +212,17 @@ function displayResults(inputId, resultsId, containerId, filteredItems, resultsL
         }
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
+		div.classList.add("result-highlight");
+
+		div.style.background = "#ddd";
+		div.style.color = "black";
+
       });
       div.addEventListener("mouseleave", function() {
         div.classList.remove("result-highlight");
+		div.style.background = "";
+		div.style.color = "";
+
       });
       resultsContainer.appendChild(div);
     });

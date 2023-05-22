@@ -18,7 +18,9 @@ document.getElementById("home").className = "active";
       <?php if(isset($this->session->userdata['logged_in'])){?>
         <div class="col-sm-2" data-toggle="modal" data-target="#LeaveRecommendation" style="color:white">Leave Recommendation</div>
       <?php }else{?>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+        <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Recommend</p>
+        </div>
       <?php }?>
 
     <div class="col-sm-1" ></div>
@@ -201,10 +203,17 @@ function displayResults(inputId, resultsId, containerId, filteredItems, resultsL
         }
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
+		div.classList.add("result-highlight");
+
+		div.style.background = "#ddd";
+		div.style.color = "black";
+
       });
       div.addEventListener("mouseleave", function() {
         div.classList.remove("result-highlight");
+		div.style.background = "";
+		div.style.color = "";
+
       });
       resultsContainer.appendChild(div);
     });

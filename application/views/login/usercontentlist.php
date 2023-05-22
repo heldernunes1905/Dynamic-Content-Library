@@ -20,6 +20,11 @@ if (isset($this->session->userdata['logged_in'])) {
       $user_not_log = 0;
 
   }
+  if(!isset($this->session->userdata['logged_in'])){
+    $checkuserblocked = array(0);
+  }
+  if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0){
+  }else{
 
 ?>
 <style>
@@ -139,7 +144,6 @@ document.getElementById("full").className = "active";
         if($state[0]->profile_state == 1){
         switch($type){
           case "movielist":?>
-          
           <li class="nav-item">
               <a href="<?= base_url() ?>index.php/profile/<?= $profileId ?>/movielist">All</a>
               </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -279,7 +283,7 @@ document.getElementById("full").className = "active";
 
               }
 
-
+              echo "<br>";
               foreach($useraddlist as $addlist){
                 if($content[0]->contentId == $addlist[0]){
                   switch($addlist[1]){
@@ -777,5 +781,6 @@ document.getElementById('btn2').addEventListener('click', function() {
 <?php
       }
     }
+  }
 $this->load->view('header/bottom');
 ?>

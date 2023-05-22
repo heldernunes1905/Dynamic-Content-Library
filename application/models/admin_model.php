@@ -1802,8 +1802,9 @@ class admin_model extends CI_Model
                 
             }
 
-            
-            $rating_counter = 0;
+        }
+
+        $rating_counter = 0;
             foreach($genrestdif as $genres){
                 $differentGenres = array();
                 $putGenre = array();
@@ -1864,9 +1865,6 @@ class admin_model extends CI_Model
                 $i++;
   
             }
-
-
-        }
 
         if(!empty($content)){
             foreach($content as $ct){

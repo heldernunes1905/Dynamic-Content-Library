@@ -17,7 +17,8 @@ if (isset($this->session->userdata['logged_in'])) {
 if(!empty($checkuserblocked)|| !isset($this->session->userdata['logged_in'])){
   $checkuserblocked = array();
 
-if(($key = array_search($user_id, $checkuserblocked)) !== false){
+if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0){
+
 }else{
 ?>
           

@@ -51,6 +51,9 @@ $thread_id = strtok($thread_id, '/');
       <div class="col-sm-10" >
       <?php echo "<h1>".$threadinsidename[0]->title."</h1>";?>
       <?php echo "<h4>".$threadinsidename[0]->description."</h4>";?>
+      <?php if(!isset($this->session->userdata['logged_in'])){?>
+        <p data-target='#myModal' style="float:right" data-toggle='modal' alt='banner' width='10%' >Leave comment</p>
+      <?php }?>
       </div>
     <div class="col-sm-1" ></div>
 </div>

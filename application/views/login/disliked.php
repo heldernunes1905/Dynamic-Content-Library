@@ -19,7 +19,7 @@ if (isset($this->session->userdata['logged_in'])) {
 if(!empty($checkuserblocked)|| !isset($this->session->userdata['logged_in'])){
   $checkuserblocked = array();
 
-if(($key = array_search($user_id, $checkuserblocked)) !== false){
+if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0){
 }else{
 ?>
           
@@ -193,10 +193,11 @@ if(($key = array_search($user_id, $checkuserblocked)) !== false){
               <div class="col-sm-10"  >
               <?php  //liked studios from user
                     
-                    if(!empty($likewriter)){
-
+                    if(!empty($likewriter[0])){
                       //liked writer from user
+
                       foreach($likewriter as $likedw){ 
+
                           ?>
                           <a href="<?= base_url() ?>index.php/staff/<?= $likedw[0]->staff_id ?>">
           
@@ -225,7 +226,7 @@ if(($key = array_search($user_id, $checkuserblocked)) !== false){
               <div class="col-sm-10"  >
               <?php  //liked studios from user
                     
-              if(!empty($likeactor)){
+              if(!empty($likeactor[0])){
                 //liked actors from user
                 foreach($likeactor as $likeda){ 
                     ?>

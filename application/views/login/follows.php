@@ -65,7 +65,7 @@ if(($key = array_search($user_id, $checkuserblocked)) !== false){
                 <?php } ?>
                 <?php
             }else{
-                echo "YOU DONT FOLLOW ANYONE CURRENTLY";
+                echo "<p>YOU DONT FOLLOW ANYONE CURRENTLY</p>";
              }
 
 

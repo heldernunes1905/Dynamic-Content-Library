@@ -987,10 +987,31 @@ if(!empty($state[0])){
     $profileId = $user_id;
   }
   if($state[0]->profile_state == 0 && $user_id != $profileId){
-      echo "<h1>You cannot view this profile</h1>";
-  }else if(($key = array_search($user_id, $checkuserblocked)) !== false){
-        echo "<h1> You cannot view this profile </h1>";
-
+    ?>
+    <div id="my-row" class="row">
+          <div class="col-sm-1" >
+          </div>
+          <div class="col-sm-10"><?php
+                echo "<h1>You cannot view this profile</h1>";
+        ?> </div>
+        <div class="col-sm-1" >
+          </div>
+      </div>
+      </div>
+      <?php
+      }else if(($key = array_search($user_id, $checkuserblocked)) !== false){
+        ?>
+        <div id="my-row" class="row">
+              <div class="col-sm-1" >
+              </div>
+              <div class="col-sm-10"><?php
+                    echo "<h1>You cannot view this profile</h1>";
+            ?> </div>
+            <div class="col-sm-1" >
+              </div>
+          </div>
+          </div>
+          <?php
   }else{
   ?>    
   

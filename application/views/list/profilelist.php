@@ -21,6 +21,11 @@ if (isset($this->session->userdata['logged_in'])) {
       $user_not_log = 0;
 
   }
+  if(!isset($this->session->userdata['logged_in'])){
+    $checkuserblocked = array(0);
+  }
+if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0 ){
+  }else{
 ?>
 
 <style>
@@ -213,19 +218,19 @@ document.getElementById("full").className = "active";
                 if($content[0]->contentId == $addlist[0]){
                   switch($addlist[1]){
                     case 0: ?>
-                      No List <?php echo $content[0]->personalrating ?>
+                      <br>No List <?php echo $content[0]->personalrating ?>
                      <?php break;
                     case 1: ?>
-                      Watched <?php echo $content[0]->personalrating ?>
+                      <br>Watched <?php echo $content[0]->personalrating ?>
                       <?php break;
                     case 2: ?>
-                      Want to Watch <?php echo $content[0]->personalrating ?>
+                      <br>Want to Watch <?php echo $content[0]->personalrating ?>
                       <?php break;
                     case 3: ?>
-                       Stalled <?php echo $content[0]->personalrating ?>
+                       <br>Stalled <?php echo $content[0]->personalrating ?>
                       <?php break;
                     case 4: ?>
-                       Dropped <?php echo $content[0]->personalrating ?>
+                       <br>Dropped <?php echo $content[0]->personalrating ?>
                       <?php break;
                   }
                 }
@@ -267,13 +272,14 @@ document.getElementById("full").className = "active";
           </div>
 
           <?php echo $content[0]->description.'<br>' ?>
-
+          <br>
             <?php foreach ($myArray as $genreshow) { 
                 if($genreshow == "No genres"){
                   echo $genreshow;
                 }else{
               ?>
-              <a href="<?= base_url() ?>index.php/genre/<?= $genreshow ?>"><?php echo $genreshow ?></a>
+              
+              <a style="background-color:#6C6A61; color:white;  border-radius: 1px" href="<?= base_url() ?>index.php/genre/<?= $genreshow ?>"><?php echo $genreshow ?></a>
             <?php 
                 }
               } ?></br>
@@ -288,47 +294,47 @@ document.getElementById("full").className = "active";
       switch($addlist[1]){
         case 0: ?>
          <select name="list" id="list" >
-          <option value="0<?php echo $content[0]->contentId?>" selected>No list</option>
-          <option value="1<?php echo $content[0]->contentId?>" >watched</option>
-          <option value="2<?php echo $content[0]->contentId?>">want to watch</option>
-          <option value="3<?php echo $content[0]->contentId?>">stalled</option>
-          <option value="4<?php echo $content[0]->contentId?>">dropped</option>
+          <option value="0<?php echo $content[0]->contentId?>" selected>No list</option><br>
+          <option value="1<?php echo $content[0]->contentId?>" >watched</option><br>
+          <option value="2<?php echo $content[0]->contentId?>">want to watch</option><br>
+          <option value="3<?php echo $content[0]->contentId?>">stalled</option><br>
+          <option value="4<?php echo $content[0]->contentId?>">dropped</option><br>
         </select>
          <?php break;
         case 1: ?>
           <select name="list" id="list">
-           <option value="0<?php echo $content[0]->contentId?>" >No list</option>
-           <option value="1<?php echo $content[0]->contentId?>" selected>watched</option>
-           <option value="2<?php echo $content[0]->contentId?>">want to watch</option>
-           <option value="3<?php echo $content[0]->contentId?>">stalled</option>
-           <option value="4<?php echo $content[0]->contentId?>">dropped</option>
+           <option value="0<?php echo $content[0]->contentId?>" >No list</option><br>
+           <option value="1<?php echo $content[0]->contentId?>" selected>watched</option><br>
+           <option value="2<?php echo $content[0]->contentId?>">want to watch</option><br>
+           <option value="3<?php echo $content[0]->contentId?>">stalled</option><br>
+           <option value="4<?php echo $content[0]->contentId?>">dropped</option><br>
          </select>
           <?php break;
         case 2: ?>
           <select name="list" id="list">
-          <option value="0<?php echo $content[0]->contentId?>" >No list</option>
-           <option value="1<?php echo $content[0]->contentId?>" >watched</option>
-           <option value="2<?php echo $content[0]->contentId?>"selected>want to watch</option>
-           <option value="3<?php echo $content[0]->contentId?>">stalled</option>
-           <option value="4<?php echo $content[0]->contentId?>">dropped</option>
+          <option value="0<?php echo $content[0]->contentId?>" >No list</option><br>
+           <option value="1<?php echo $content[0]->contentId?>" >watched</option><br>
+           <option value="2<?php echo $content[0]->contentId?>"selected>want to watch</option><br>
+           <option value="3<?php echo $content[0]->contentId?>">stalled</option><br>
+           <option value="4<?php echo $content[0]->contentId?>">dropped</option><br>
          </select>
           <?php break;
         case 3: ?>
            <select name="list" id="list">
-          <option value="0<?php echo $content[0]->contentId?>" >No list</option>
-           <option value="1<?php echo $content[0]->contentId?>" >watched</option>
-           <option value="2<?php echo $content[0]->contentId?>">want to watch</option>
-           <option value="3<?php echo $content[0]->contentId?>" selected>stalled</option>
-           <option value="4<?php echo $content[0]->contentId?>">dropped</option>
+          <option value="0<?php echo $content[0]->contentId?>" >No list</option><br>
+           <option value="1<?php echo $content[0]->contentId?>" >watched</option><br>
+           <option value="2<?php echo $content[0]->contentId?>">want to watch</option><br>
+           <option value="3<?php echo $content[0]->contentId?>" selected>stalled</option><br>
+           <option value="4<?php echo $content[0]->contentId?>">dropped</option><br>
          </select>
           <?php break;
         case 4: ?>
            <select name="list" id="list">
-          <option value="0<?php echo $content[0]->contentId?>" >No list</option>
-           <option value="1<?php echo $content[0]->contentId?>" >watched</option>
-           <option value="2<?php echo $content[0]->contentId?>">want to watch</option>
-           <option value="3<?php echo $content[0]->contentId?>">stalled</option>
-           <option value="4<?php echo $content[0]->contentId?>" selected>dropped</option>
+          <option value="0<?php echo $content[0]->contentId?>" >No list</option><br>
+           <option value="1<?php echo $content[0]->contentId?>" >watched</option><br>
+           <option value="2<?php echo $content[0]->contentId?>">want to watch</option><br>
+           <option value="3<?php echo $content[0]->contentId?>">stalled</option><br>
+           <option value="4<?php echo $content[0]->contentId?>" selected>dropped</option><br>
          </select>
           <?php break;
       }
@@ -587,5 +593,6 @@ document.getElementById('btn2').addEventListener('click', function() {
 });
 </script>
 <?php
+}
 $this->load->view('header/bottom');
 ?>

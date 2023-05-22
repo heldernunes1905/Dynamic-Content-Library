@@ -151,8 +151,8 @@
   }
   
   .search-results div:hover {
-    background-color: #ddd;
-    color:black;
+    background-color: #1f1f1f;
+    color:white;
   }
   
 
@@ -408,4 +408,8 @@
 
     .btn-primary{
       background-color:#1584ab;
+    }
+
+    .result-highlight{
+      background-color: blue;
     }

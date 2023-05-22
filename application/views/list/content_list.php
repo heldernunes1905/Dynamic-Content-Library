@@ -571,6 +571,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <?php }?>
       <?php if(isset($this->session->userdata['logged_in'])){ ?>
         <p data-target='#LeaveRecommendation' data-toggle='modal' alt='banner' width='10%' >Recommend</p>
+      <?php }else{?>
+        <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Recommend</p>
       <?php }?>
       <hr>
 

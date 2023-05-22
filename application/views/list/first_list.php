@@ -446,6 +446,8 @@ document.getElementById("home").className = "active";
       <h1><button class="listbtn" onclick="location.href = '<?= base_url() ?>index.php/recommendations'">See all recommendations</button></h1>
       <?php if(isset($this->session->userdata['logged_in'])){ ?>
         <p data-target='#LeaveRecommendation' data-toggle='modal' alt='banner' width='10%' >Recommend</p>
+      <?php }else{?>
+        <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Recommend</p>
       <?php }?>
       <hr>
     </div>
@@ -827,11 +829,18 @@ function displayResults(inputId, resultsId, containerId, filteredItems, resultsL
         }
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
-      });
-      div.addEventListener("mouseleave", function() {
-        div.classList.remove("result-highlight");
-      });
+      div.classList.add("result-highlight");
+
+      div.style.background = "#ddd";
+      div.style.color = "black";
+
+        });
+        div.addEventListener("mouseleave", function() {
+          div.classList.remove("result-highlight");
+      div.style.background = "";
+      div.style.color = "";
+
+        });
       resultsContainer.appendChild(div);
     });
     searchResults.style.display = "block";

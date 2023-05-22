@@ -14,7 +14,11 @@ if (isset($this->session->userdata['logged_in'])) {
   $this->load->view('login/insideheader/headernotlog');
   $user_id = $user_id_prof;
 }
-
+if(!isset($this->session->userdata['logged_in'])){
+  $checkuserblocked = array(0);
+}
+if(($key = array_search($user_id, $checkuserblocked)) !== false || $state[0]->profile_state == 0){
+}else{
 ?>
 
    <?php 
@@ -240,11 +244,15 @@ if (isset($this->session->userdata['logged_in'])) {
 <div class="container-fluid no-padding">
     <div id="my-row" class="row">
       <div class="col-sm-1" >
+        
       </div>
       <div class="col-sm-10"  >
-
+      <?php if(!isset($this->session->userdata['logged_in'])){ ?>
+          <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Leave comment</p>
+        <?php }?>
         <div class="row">
-
+        
+        
         <?php
         if($state[0]->profile_state == 1){
         foreach($personalcomment as $cp){
@@ -278,7 +286,7 @@ if (isset($this->session->userdata['logged_in'])) {
 
             <a href="<?= base_url() ?>index.php/profile/<?= $cp->user_id ?>"> <?php
             echo "Avatar: ".$cp->avatar.'<br>';
-            echo "User: ".$cp->username.'<br>';
+            echo "User: ".base64_decode($cp->username).'<br>';
             echo "Date: ".$cp->date.'<br>';
             ?>
             </a>
@@ -362,6 +370,7 @@ function confirmRemoveComment(profile_id,user_id) {
 }
 </script>
 <?php
+        }
 }
 $this->load->view('header/bottom');
 ?>

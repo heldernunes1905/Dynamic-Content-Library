@@ -1,5 +1,9 @@
 </div>
-<a href='<?=base_url()?>index.php/supportformuser'>Support Form</a>
+<?php if(isset($this->session->userdata['logged_in'])){ ?>
+    <a href='<?=base_url()?>index.php/supportformuser'>Support Form</a>
+  <?php }else{?>
+    <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Support form</p>
+<?php }?>
 
 </body>
 <script>

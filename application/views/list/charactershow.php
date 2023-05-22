@@ -202,7 +202,7 @@ document.getElementById("full").className = "active";
   <div class="col-sm-10" >
 
     <?php if(!empty($personalcomment) && isset($this->session->userdata['logged_in'])){?>
-    <h1>YOUR REVIEW</h1>
+    <h1>YOUR COMMENT</h1>
   <?php }?>
 
    <?php
@@ -245,7 +245,12 @@ document.getElementById("full").className = "active";
   <div id="my-row" class="row">
   <div class="col-sm-1" ></div>
   <div class="col-sm-9" >
-  <h1>USER REVIEWS</h1>
+    <?php 
+     if(!isset($this->session->userdata['logged_in'])){?>
+      <p data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Leave Comment</p>
+    <?php }
+    ?>
+  <h1>USER COMMENTS</h1>
 
     <div  class="row">
           <?php foreach($comments as $com){
@@ -267,10 +272,11 @@ document.getElementById("full").className = "active";
         ?>
         
         </div>
-        <h1><a href="<?= base_url() ?>index.php/characters/<?= $contents[0]->character_id; ?>/review">SEE ALL REVIEWS</a></h1>
+        <h1><a href="<?= base_url() ?>index.php/characters/<?= $contents[0]->character_id; ?>/review">SEE ALL COMMENTS</a></h1>
         <?php if(empty($personalcomment) && isset($this->session->userdata['logged_in'])){?>
-          <h1 data-target='#modaladdcomment' data-toggle='modal'>LEAVE REVIEW</h1>
-        <?php }?>
+          <h1 data-target='#modaladdcomment' data-toggle='modal'>LEAVE COMMENT</h1>
+        
+      <?php }?>
       </div>
        <div class="col-sm-2" >
       

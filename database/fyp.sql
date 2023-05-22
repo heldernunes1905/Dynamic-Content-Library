@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2023 at 10:25 PM
+-- Generation Time: May 22, 2023 at 10:33 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -130,17 +130,27 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`contentId`, `title`, `content_type`, `description`, `images`, `altImg`, `rating`, `release_date`, `ranking`, `studio_id`, `links`, `duration`, `ep_number`) VALUES
-(1, 'The Karate Kid', 'movie', 'The Karate Kid is a 1984 American martial arts drama film written by Robert Mark Kamen and directed by John G. Avildsen. It is the first installment in the Karate Kid franchise, and stars Ralph Macchio, Pat Morita, Elisabeth Shue and William Zabka.[3][4] The Karate Kid follows Daniel LaRusso (Macchio), a teenager taught karate by Mr. Miyagi (Morita) to help defend himself and compete in a tournament against his bullies, one of whom is Johnny Lawrence (Zabka), the ex-boyfriend of his love interest Ali Mills (Shue).', 'MV5BNTkzY2YzNmYtY2ViMS00MThiLWFlYTEtOWQ1OTBiOGEwMTdhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg', 'a', '1', '2023-04-17', 12, 1, 'a', 115, 10),
-(2, 'The Super Mario Bros. Movie', 'movie', 's', 'The_Super_Mario_Bros._Movie_poster.jpg', 's', '3', '2023-04-16', 1, 2, 's', 200, 1),
-(3, 'Thor: Love and Thunder', 'movie', 'd', 'MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg', 'd', '4', '2023-01-02', 123, 3, 'd', 78, 1),
-(4, 'One Piece Film: Red', 'movie', 'f', 'One_Piece_Film_Red_Visual_Poster.jpg', 'f', '4', '1965-12-31', 13, 3, 'f', 65, 1),
+(1, 'The Karate Kid', 'movie', 'The Karate Kid is a 1984 American martial arts drama film written by Robert Mark Kamen and directed by John G. Avildsen. It is the first installment in the Karate Kid franchise, and stars Ralph Macchio, Pat Morita, Elisabeth Shue and William Zabka.[3][4] The Karate Kid follows Daniel LaRusso (Macchio), a teenager taught karate by Mr. Miyagi (Morita) to help defend himself and compete in a tournament against his bullies, one of whom is Johnny Lawrence (Zabka), the ex-boyfriend of his love interest Ali Mills (Shue).', 'MV5BNTkzY2YzNmYtY2ViMS00MThiLWFlYTEtOWQ1OTBiOGEwMTdhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg', 'a', '1', '1984-10-25', 12, 1, 'a', 115, 10),
+(2, 'The Super Mario Bros. Movie', 'movie', 's', 'The_Super_Mario_Bros._Movie_poster.jpg', 's', '3', '2023-04-25', 1, 2, 's', 200, 1),
+(3, 'Thor: Love and Thunder', 'movie', 'd', 'MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg', 'd', '4', '2022-07-06', 123, 3, 'd', 78, 1),
+(4, 'One Piece Film: Red', 'movie', 'f', 'One_Piece_Film_Red_Visual_Poster.jpg', 'f', '4', '2022-11-03', 13, 3, 'f', 65, 1),
 (43, 'Karate kid 2', 'movie', 'ewfrf', 'Karate_kid_part_II.jpg', 'gafsa', '412', '2023-03-22', 21, 3, '1rwq', 74, 0),
 (44, 'hoagsohig', 'show', '123123', 'pzd73vyin2ma15.jpg', 'hoagsohig', '1', '2023-03-16', 1, 4, '1', 20, 25),
 (53, 'Titulo2', 'show', 'desc', '2', 'title', '1', '2023-04-04', 12, 1, '123', 115, 1),
 (54, 'Forrest Gump', 'movie', 'Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.', 'fgump.jpg', 'Forrest Gump', '4', '1994-10-07', 12, 17, 'https://www.imdb.com/title/tt0109830/', 142, 1),
 (55, 'Inception', 'movie', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.', 'inception.jpg', 'Inception', '4', '2010-06-08', 8, 16, 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.', 148, 1),
 (56, 'fight club', 'movie', 'Unhappy with his capitalistic lifestyle, a white-collared insomniac forms an underground fight club with Tyler, a careless soap salesman. Soon, their venture spirals down into something sinister.', 'fight_club.jpg', 'fight club', '4', '1999-11-19', 5, 15, 'https://www.imdb.com/title/tt0137523/', 139, 1),
-(57, 'Breaking Bad', 'show', 'Walter White, a chemistry teacher, discovers that he has cancer and decides to get into the meth-making business to repay his medical debts. His priorities begin to change when he partners with Jesse.', 'breakbad.jpg', 'Breaking Bad', '5', '2008-01-20', 3123, 14, 'https://www.imdb.com/title/tt0903747/', 48, 7);
+(57, 'Breaking Bad', 'show', 'Walter White, a chemistry teacher, discovers that he has cancer and decides to get into the meth-making business to repay his medical debts. His priorities begin to change when he partners with Jesse.', 'breakbad.jpg', 'Breaking Bad', '5', '2008-01-20', 3123, 14, 'https://www.imdb.com/title/tt0903747/', 48, 7),
+(58, 'Spider-Man: Across the Spider-Verse', 'movie', 'After reuniting with Gwen Stacy, Brooklyn\'s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. However, when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders. He must soon redefine what it means to be a hero so he can save the people he loves most.', 'spid_across.jpg', 'Spider-Man: Across the Spider-Verse', '0', '2023-06-01', 0, 1, 'https://www.imdb.com/title/tt9362722/', 115, 1),
+(59, 'Oppenheimer', 'movie', 'Physicist J Robert Oppenheimer works with a team of scientists during the Manhattan Project, leading to the development of the atomic bomb.', 'oppenheimer.jpg', 'Oppenheimer', '0', '2023-07-21', 0, 1, 'https://www.imdb.com/title/tt15398776/', 150, 1),
+(61, 'Elemental', 'movie', 'In a city where fire, water, land, and air residents live together, a fiery young woman and a go-with-the-flow guy discover something elemental: how much they actually have in common.', 'elemental.jpg', 'Elemental', '0', '2023-07-13', 0, 1, 'https://www.imdb.com/title/tt15789038/', 102, 1),
+(62, 'Mission: Impossible – Dead Reckoning Part One', 'movie', 'Ethan Hunt and the IMF team must track down a terrifying new weapon that threatens all of humanity if it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins. Confronted by a mysterious, all-powerful enemy, Ethan is forced to consider that nothing can matter more than the mission -- not even the lives of those he cares about most.', 'mideadreconing.jpg', 'Mission: Impossible – Dead Reckoning Part One', '0', '2023-07-12', 0, 1, 'https://www.imdb.com/title/tt9603212/', 0, 1),
+(63, 'Barbie', 'movie', 'After being expelled from Barbieland for being a less than perfect-looking doll, Barbie sets off for the human world to find true happiness.', 'barbie.jpg', 'Barbie', '0', '2023-07-20', 0, 1, 'https://www.imdb.com/title/tt1517268/', 100, 1),
+(64, 'The Flash', 'movie', 'Worlds collide when the Flash uses his superpowers to travel back in time to change the events of the past. However, when his attempt to save his family inadvertently alters the future, he becomes trapped in a reality in which General Zod has returned, threatening annihilation. With no other superheroes to turn to, the Flash looks to coax a very different Batman out of retirement and rescue an imprisoned Kryptonian -- albeit not the one he\'s looking for.', 'theflash.jpg', 'The Flash', '0', '2023-07-15', 0, 1, 'https://www.imdb.com/title/tt0439572/', 144, 1),
+(65, 'Kathal', 'movie', 'A local politician\'s prized jackfruit trees have disappeared from his garden. A young policewoman desperately tries to solve this strange case to prove herself worthy of her position.', 'kathal.jpg', 'Kathal', '7', '2023-05-19', 0, 1, 'https://www.imdb.com/title/tt18413766/', 115, 1),
+(66, 'Creed III', 'movie', 'Still dominating the boxing world, Adonis Creed is thriving in his career and family life. When Damian, a childhood friend and former boxing prodigy resurfaces after serving time in prison, he\'s eager to prove that he deserves his shot in the ring. The face-off between former friends is more than just a fight. To settle the score, Adonis must put his future on the line to battle Damian -- a fighter who has nothing to lose.', 'creed3.jpg', 'Creed III', '7', '2023-03-02', 0, 1, 'https://www.imdb.com/title/tt11145118/', 117, 1),
+(67, 'White Men Can\'t Jump', 'movie', 'A remake of the 1992 film about a pair of basketball hustlers who team up to earn extra cash.', 'whitejump.jpg', 'White Men Can\'t Jump', '4', '2023-05-19', 0, 1, 'https://www.imdb.com/title/tt6436620/', 101, 1),
+(68, 'Virupaksha', 'movie', 'Mysterious deaths occur in a village due to an unknown person\'s occult practices. The whole town is afraid, and the problems continue as they search for the one responsible.', 'virupashka.jpg', 'Virupaksha', '8', '2023-04-21', 0, 1, 'https://en.wikipedia.org/wiki/Virupaksha_(film)', 146, 1);
 
 -- --------------------------------------------------------
 
@@ -168,7 +178,18 @@ INSERT INTO `content_character` (`content_character_id`, `content_id`, `characte
 (12, 54, '21,22,23,24'),
 (13, 55, '17,18,19,20'),
 (14, 56, '13,14,15'),
-(15, 57, '9,10,11,12');
+(15, 57, '9,10,11,12'),
+(16, 58, '1'),
+(17, 59, '1'),
+(18, 60, '1'),
+(19, 61, '1'),
+(20, 62, '1'),
+(21, 63, ''),
+(22, 64, ''),
+(23, 65, '1'),
+(24, 66, ''),
+(25, 67, '1'),
+(26, 68, '1');
 
 -- --------------------------------------------------------
 
@@ -190,7 +211,8 @@ CREATE TABLE `forum` (
 --
 
 INSERT INTO `forum` (`forum_id`, `title`, `description`, `date`, `type`, `public`) VALUES
-(1, 'new Title', 'This is the new title for the fierst forum', '2023-04-28 20:13:56', 1, 1);
+(1, 'new Title', 'This is the new title for the fierst forum', '2023-04-28 20:13:56', 1, 1),
+(3, 'Forum 2', 'Website News', '2023-05-22 10:27:04', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -256,7 +278,18 @@ INSERT INTO `genrecontent` (`genre_content_id`, `genre_id`, `content_id`) VALUES
 (15, '14,3,15,16,12,17', 54),
 (16, '2,19,20,4,21,12', 55),
 (17, '2,19,22,23,12', 56),
-(18, '12,23,24,22,19,25', 57);
+(18, '12,23,24,22,19,25', 57),
+(19, '2', 58),
+(20, '12', 59),
+(21, '14', 60),
+(22, '14', 61),
+(23, '2,4', 62),
+(24, '3', 63),
+(25, '4,2', 64),
+(26, '14,12,23', 65),
+(27, '12,10', 66),
+(28, '12,14,10', 67),
+(29, '12', 68);
 
 -- --------------------------------------------------------
 
@@ -280,17 +313,15 @@ CREATE TABLE `lists` (
 --
 
 INSERT INTO `lists` (`list_id`, `title`, `image`, `user_id`, `content_id`, `list_type`, `list_state`, `list_public`) VALUES
-(2, 'second', 'b', 1, '', 1, 4, 0),
 (3, 'third', '', 1, '2', 5, 1, 0),
-(4, 'fourth', 'd', 1, '1', 5, 1, 1),
 (28, '', '', 1, '2,4', 1, 2, 1),
 (29, '', '', 1, '3', 1, 1, 1),
 (30, '', '', 1, ',1', 1, 3, 1),
 (31, '', '', 2, '1,2', 1, 3, 1),
-(32, '', '', 1, '53', 2, 2, 1),
-(33, '', '', 1, '44', 2, 3, 1),
+(32, '', '', 1, '', 2, 2, 1),
+(33, '', '', 1, '', 2, 3, 1),
 (34, '', '', 1, '', 2, 4, 1),
-(35, 'banger', 'default.jpg', 1, '1', 5, 0, 0);
+(36, '', '', 1, '', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -313,8 +344,8 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`notification_id`, `title`, `image`, `text`, `date`, `user_id`, `status`) VALUES
-(3, 'qdfdxcvgtrs41321312', 'dghrt', 'bfvxcvdz222', '2023-03-26 18:23:24', 6, 1),
-(4, 'This is a testing title', 'notif.jpg', 'Not a title', '2023-03-26 18:07:09', 6, 1),
+(3, 'Feedback', 'dghrt', 'Thanks for your recommendation on a new feature', '2023-03-26 18:23:24', 1, 1),
+(4, 'Thanks', 'notif.jpg', 'Thank you for using the website', '2023-03-26 18:07:09', 1, 1),
 (6, '', 'Notif_Image', '', '2023-04-19 21:32:18', 0, 1),
 (7, '', 'Notif_Image', '', '2023-04-19 21:32:51', 0, 1),
 (8, '', 'Notif_Image', '', '2023-04-19 21:32:58', 0, 1),
@@ -448,7 +479,18 @@ INSERT INTO `staffcontent` (`staffcontent_id`, `content_id`, `staff_id`) VALUES
 (12, 54, '9,10,11,12'),
 (13, 55, '19,21,20,18'),
 (14, 56, '15,16,17'),
-(15, 57, '13,24,23,22');
+(15, 57, '13,24,23,22'),
+(16, 58, '1'),
+(17, 59, '1'),
+(18, 60, '1'),
+(19, 61, '1'),
+(20, 62, '1'),
+(21, 63, ''),
+(22, 64, ''),
+(23, 65, '1'),
+(24, 66, ''),
+(25, 67, '1'),
+(26, 68, '1');
 
 -- --------------------------------------------------------
 
@@ -475,7 +517,18 @@ INSERT INTO `staff_character` (`staff_character_id`, `staff_id`, `character_id`)
 (7, '9,10,11,12', '21,22,23,24'),
 (8, '19,21,20,18', '17,18,19,20'),
 (9, '15,16,17', '13,14,15'),
-(10, '13,24,23,22', '9,10,11,12');
+(10, '13,24,23,22', '9,10,11,12'),
+(11, '1', '1'),
+(12, '1', '1'),
+(13, '1', '1'),
+(14, '1', '1'),
+(15, '1', '1'),
+(16, '', ''),
+(17, '', ''),
+(18, '1', '1'),
+(19, '', ''),
+(20, '1', '1'),
+(21, '1', '1');
 
 -- --------------------------------------------------------
 
@@ -560,7 +613,8 @@ CREATE TABLE `thread` (
 
 INSERT INTO `thread` (`thread_id`, `forum_id`, `title`, `description`, `date`, `public`) VALUES
 (1, 1, 'Testing the thread 1', 'This is a description', '2023-04-28 20:17:30', 1),
-(4, 1, 'new Title', 'aastic', '2023-04-28 20:17:26', 0);
+(4, 1, 'new Title', 'aastic', '2023-04-28 20:17:26', 0),
+(5, 3, 'New Features 05-2023', 'These are discussions for the new features added this month', '2023-05-22 10:27:56', 1);
 
 -- --------------------------------------------------------
 
@@ -808,19 +862,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
-  MODIFY `contentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `contentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `content_character`
 --
 ALTER TABLE `content_character`
-  MODIFY `content_character_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `content_character_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `genre`
@@ -832,13 +886,13 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `genrecontent`
 --
 ALTER TABLE `genrecontent`
-  MODIFY `genre_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `genre_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `list_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `list_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `notification`
@@ -868,13 +922,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `staffcontent`
 --
 ALTER TABLE `staffcontent`
-  MODIFY `staffcontent_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `staffcontent_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `staff_character`
 --
 ALTER TABLE `staff_character`
-  MODIFY `staff_character_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `staff_character_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `studio`
@@ -892,7 +946,7 @@ ALTER TABLE `supportform`
 -- AUTO_INCREMENT for table `thread`
 --
 ALTER TABLE `thread`
-  MODIFY `thread_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `thread_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `userpreferences`
@@ -910,7 +964,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `watchlist`
 --
 ALTER TABLE `watchlist`
-  MODIFY `watchlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `watchlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

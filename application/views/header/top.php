@@ -466,10 +466,17 @@ function displayResultstop(inputId, resultsId, containerId, filteredItems, resul
         } 
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
+		div.classList.add("result-highlight");
+
+		div.style.background = "#ddd";
+		div.style.color = "black";
+
       });
       div.addEventListener("mouseleave", function() {
         div.classList.remove("result-highlight");
+		div.style.background = "";
+		div.style.color = "";
+
       });
       resultsContainer.appendChild(div);
     });
@@ -511,8 +518,6 @@ function handleSelectChangetop() {
   } else {
     // Reset select value to current array
     const selectElement = document.getElementById("select-array-top");
-
-	alert(1);
 
     const currentArrayName = currentArraytop === movie ? "movie" :
 	currentArraytop === show ? "show" :

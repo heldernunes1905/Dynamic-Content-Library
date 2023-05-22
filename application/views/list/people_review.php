@@ -213,6 +213,12 @@ label:hover ~ input:checked ~ label /* highlight previous selected stars */ { co
                 <?php }
               }
             }?>
+            <?php if(empty($personalcomment) && isset($this->session->userdata['logged_in'])){?>
+                  <h1 data-target='#modaladdcomment' data-toggle='modal'>LEAVE COMMENT</h1>
+                <?php }else if(!isset($this->session->userdata['logged_in'])){?>
+                  <h1 data-target='#myModal' data-toggle='modal' alt='banner' width='10%' >Leave Review</h1>
+                <?php }
+              ?>
                   <?php foreach($comments as $com){
                   ?> 
                   <div class="comment_style">
@@ -230,9 +236,7 @@ label:hover ~ input:checked ~ label /* highlight previous selected stars */ { co
                 } 
                 ?>
                 
-                <?php if(empty($personalcomment) && isset($this->session->userdata['logged_in'])){?>
-                  <h1 data-target='#modaladdcomment' data-toggle='modal'>LEAVE REVIEW</h1>
-                <?php }?>
+                
               </div>
            
           <?php

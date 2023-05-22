@@ -164,10 +164,17 @@ function displayResults(inputId, resultsId, containerId, filteredItems, resultsL
         } 
       });
       div.addEventListener("mouseenter", function() {
-        div.classList.add("result-highlight");
+		div.classList.add("result-highlight");
+
+		div.style.background = "#ddd";
+		div.style.color = "black";
+
       });
       div.addEventListener("mouseleave", function() {
         div.classList.remove("result-highlight");
+		div.style.background = "";
+		div.style.color = "";
+
       });
       resultsContainer.appendChild(div);
     });
