@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2023 at 10:33 AM
+-- Generation Time: Jul 22, 2023 at 07:16 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -101,7 +101,8 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `comment_title`, `comment_type`
 (52, 8, 'title', 1, 2, 3, 'Put your comment here', '', '2023-03-24 23:46:25'),
 (67, 1, 'title', 3, 4, 1, 'trying', '', '2023-03-25 21:47:03'),
 (68, 1, 'title', 3, 4, 4, 'THELLO PEOPLE', '', '2023-03-26 15:49:36'),
-(69, 1, 'title', 1, 2, 2, 'Put your comment here', '', '2023-04-27 19:46:06');
+(69, 1, 'title', 1, 2, 2, 'Put your comment here', '', '2023-04-27 19:46:06'),
+(70, 1, 'title', 1, 2, 13, 'Put your comment here', '', '2023-05-22 10:47:13');
 
 -- --------------------------------------------------------
 
@@ -313,15 +314,18 @@ CREATE TABLE `lists` (
 --
 
 INSERT INTO `lists` (`list_id`, `title`, `image`, `user_id`, `content_id`, `list_type`, `list_state`, `list_public`) VALUES
-(3, 'third', '', 1, '2', 5, 1, 0),
-(28, '', '', 1, '2,4', 1, 2, 1),
+(3, 'third', '', 1, '57', 5, 1, 0),
+(28, '', '', 1, '2,4,1', 1, 2, 1),
 (29, '', '', 1, '3', 1, 1, 1),
-(30, '', '', 1, ',1', 1, 3, 1),
+(30, '', '', 1, '', 1, 3, 1),
 (31, '', '', 2, '1,2', 1, 3, 1),
 (32, '', '', 1, '', 2, 2, 1),
-(33, '', '', 1, '', 2, 3, 1),
+(33, '', '', 1, ',57', 2, 3, 1),
 (34, '', '', 1, '', 2, 4, 1),
-(36, '', '', 1, '', 2, 1, 1);
+(36, '', '', 1, '', 2, 1, 1),
+(38, '', '', 1, '', 1, 4, 1),
+(39, 'ff', 'default.jpg', 1, '', 5, 0, 0),
+(40, 'aaa', 'default.jpg', 1, '57', 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -344,7 +348,6 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`notification_id`, `title`, `image`, `text`, `date`, `user_id`, `status`) VALUES
-(3, 'Feedback', 'dghrt', 'Thanks for your recommendation on a new feature', '2023-03-26 18:23:24', 1, 1),
 (4, 'Thanks', 'notif.jpg', 'Thank you for using the website', '2023-03-26 18:07:09', 1, 1),
 (6, '', 'Notif_Image', '', '2023-04-19 21:32:18', 0, 1),
 (7, '', 'Notif_Image', '', '2023-04-19 21:32:51', 0, 1),
@@ -378,7 +381,7 @@ INSERT INTO `personalrating` (`personal_rating_id`, `content_id`, `user_id`, `us
 (1, 1, 8, 3.00, '2023-04-28 17:15:25', 'Kinda decent, cant give more than 3/5', 'Its okay I guess', 1),
 (4, 1, 6, 3.50, '2023-04-28 17:15:21', '3.5, it was satisfactory', 'Mid', 1),
 (21, 1, 10, 4.50, '2023-04-28 17:15:48', 'I loved it, I wish I had a mentor like that', 'Recommend it', 1),
-(32, 1, 1, 2.50, '2023-04-28 18:11:35', 'new comment', 'title test', 1),
+(32, 1, 1, 3.50, '2023-05-22 09:45:32', 'comment1', 'title1', 1),
 (36, 3, 1, 3.50, '2023-04-28 17:16:22', 'Enjoyable', 'Decent fun overall', 1),
 (37, 44, 1, 2.50, '2023-04-28 17:16:46', 'Dont think I\'ll watch it again', 'not too bad', 1),
 (43, 2, 1, 0.00, '2023-04-28 17:12:01', '', '', 0);
@@ -642,11 +645,11 @@ CREATE TABLE `userpreferences` (
 --
 
 INSERT INTO `userpreferences` (`user_likes_id`, `user_id`, `content_like`, `genre_like`, `character_like`, `studio_like`, `producer_like`, `writer_like`, `actor_like`, `user_like`, `user_liked`, `like_state`) VALUES
-(1, 1, '4,2', '4', '3', '', '', '3', '2', '', '', 0),
+(1, 1, '4,2', '4', '3,11', '', '', '3', '2', '', '', 0),
 (2, 6, '2', '2', '2', '2', '2', '2', '2', '6,10,8,1', '', 1),
 (3, 10, '1', '1', '1', '1', '1', '2', '1', '', '', 1),
 (48, 8, '', '', '', '', '', '', '', '', '1', 1),
-(51, 1, '', '', '', '', '1', '', '', '', '', 1);
+(51, 1, '65', '', '', '', '1', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -676,7 +679,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `password`, `username`, `first_name`, `last_name`, `birthday`, `gender`, `bio`, `avatar`, `profile_banner`, `following`, `profile_state`, `permission`) VALUES
-(1, 'a@a.com1', 'YQ==', 'YQ==', 'ca', 'cb', '2023-12-24', 'Male', 'bio example', '0zdfq5hqptz9114.jpg', '0zdfq5hqptz913.jpg', 'following', 1, 0),
+(1, 'a@a.com1', 'YQ==', 'YQ==', 'ca', 'cb', '2023-12-24', 'Male', 'vio', '0zdfq5hqptz9114.jpg', '0zdfq5hqptz913.jpg', 'following', 0, 0),
 (6, 'd@d.com', 'ZA==', 'ZA==', 'dad', 'ded', '0000-00-00', 'd', 'd', 'default.jpg', 'd', '', 1, 0),
 (8, 'b@b.com', 'Yg==', 'Yg==', 'bb', 'cc', '2025-11-14', 'b', 'b', 'default.jpg', '0zdfq5hqptz915.jpg', '', 1, 0),
 (10, 'c@c.com', 'Yw==', 'Yw==', 'ca', 'cb', '0000-00-00', 'gender', 'vio', '9s2xu9onunka1.jpg', '0zdfq5hqptz911.jpg', 'following', 1, 1),
@@ -705,7 +708,8 @@ INSERT INTO `watchlist` (`watchlist_id`, `content_id`, `user_id`, `ep_amount`) V
 (6, 1, 1, 10),
 (8, 44, 1, 12),
 (9, 4, 1, 1),
-(10, 2, 1, 0);
+(10, 2, 1, 0),
+(13, 57, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -856,7 +860,7 @@ ALTER TABLE `characters`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `comment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `content`
@@ -892,7 +896,7 @@ ALTER TABLE `genrecontent`
 -- AUTO_INCREMENT for table `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `list_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `list_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `notification`
@@ -934,7 +938,7 @@ ALTER TABLE `staff_character`
 -- AUTO_INCREMENT for table `studio`
 --
 ALTER TABLE `studio`
-  MODIFY `studio_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `studio_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `supportform`
@@ -964,7 +968,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `watchlist`
 --
 ALTER TABLE `watchlist`
-  MODIFY `watchlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `watchlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
