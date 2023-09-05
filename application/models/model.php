@@ -100,7 +100,9 @@ class model extends CI_Model
 
         public function getContentListNew($contentType)
         {
-                $query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 MONTH) AND release_date <= NOW()");
+                //$query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 MONTH) AND release_date <= NOW()");// get new content in the last 2 months
+                $query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType'");
+
                 $genre_total = $query->result();
                 $i = 0;
                 $j = 0;
@@ -197,7 +199,9 @@ class model extends CI_Model
 
         public function getContentListUpcoming($contentType)
         {
-                $query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType' AND release_date >= DATE_ADD(NOW(), INTERVAL 0 DAY) AND release_date <= DATE_ADD(NOW(), INTERVAL 2 MONTH)");
+                //$query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType' AND release_date >= DATE_ADD(NOW(), INTERVAL 0 DAY) AND release_date <= DATE_ADD(NOW(), INTERVAL 2 MONTH)");
+                $query = $this->db->query("SELECT content.contentId FROM content WHERE content_type= '$contentType'");
+
                 $genre_total = $query->result();
                 $i = 0;
                 $j = 0;
@@ -1441,15 +1445,18 @@ class model extends CI_Model
 
         public function getNewContentListShow($type)
         {
-                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 WEEK) AND release_date <= NOW() LIMIT 6");
+                //$query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 WEEK) AND release_date <= NOW() LIMIT 6");
+                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' LIMIT 6");
+
                 return $query->result();
         }
         
         
         public function getContentListUpcomingShow($type)
         {
-                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' 
-                AND release_date >= DATE_ADD(NOW(), INTERVAL 0 DAY) AND release_date <= DATE_ADD(NOW(), INTERVAL 2 MONTH) LIMIT 6");
+                //$query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' 
+                //AND release_date >= DATE_ADD(NOW(), INTERVAL 0 DAY) AND release_date <= DATE_ADD(NOW(), INTERVAL 2 MONTH) LIMIT 6");
+                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' LIMIT 6");
                 return $query->result();
         }
 
@@ -1468,7 +1475,9 @@ class model extends CI_Model
 
         public function getContentListNewShow($type)
         {
-                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 MONTH) AND release_date <= NOW() LIMIT 6");
+                //$query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' AND release_date>= DATE_SUB(NOW(), INTERVAL 2 MONTH) AND release_date <= NOW() LIMIT 6");
+                $query = $this->db->query("SELECT * FROM content WHERE content_type= '$type' LIMIT 6");
+
                 return $query->result();
         }
 
