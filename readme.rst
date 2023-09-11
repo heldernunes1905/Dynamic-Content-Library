@@ -1,6 +1,8 @@
+Used CodeIgniter 3.1.10
+
 Very simple way for user to create their own watchlist.
 In the HomePage User will get a the newest movies,shows, games and books
-"insert homepage image"
+
 
 they will also get the newest recomendations left by other users
 "img"
