@@ -1,8 +1,8 @@
 <?php
 $uri = $_SERVER['REQUEST_URI']; 
-$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 $profileId = strtok($profileId, '/');
-$type = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/","",$uri);
+$type = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/","",$uri);
 $type = strtok($type, '/');
 
 if (isset($this->session->userdata['logged_in'])) {
@@ -136,7 +136,7 @@ document.getElementById("full").className = "active";
       <div class="col-sm-4"  >
       <?php
      if($profileId == $user_id && isset($this->session->userdata['logged_in'])){
-      $listId = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/list/","",$uri);
+      $listId = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/list/","",$uri);
   ?>
       <button type="button" class="btn btn-success"onclick='confirmActionDeleteList()'>Delete list</button>
       <?php
@@ -186,7 +186,7 @@ document.getElementById("full").className = "active";
     
 
     if(!empty($contentslist)){
-    $listId = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/list/","",$uri);
+    $listId = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/list/","",$uri);
   ?>
 
   <div class="container-fluid no-padding">

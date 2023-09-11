@@ -1,7 +1,7 @@
 <?php
 
 $uri = $_SERVER['REQUEST_URI']; 
-$profile_id = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+$profile_id = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 $profile_id = strtok($profile_id, '/');
 
 if (isset($this->session->userdata['logged_in'])) {

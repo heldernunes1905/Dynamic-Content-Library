@@ -233,7 +233,7 @@ class admin_model extends CI_Model
                 }
             }
 
-        header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_user");
+        header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_user");
 
     }
     public function remove_staff($id)
@@ -374,7 +374,7 @@ class admin_model extends CI_Model
         }
         
         $this->db->delete('staff', array('staff_id' => $id));
-        header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_staff");
+        header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_staff");
 
     }
 
@@ -479,7 +479,7 @@ class admin_model extends CI_Model
         }
 
         $this->db->delete('characters', array('character_id' => $id));
-        header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_characters");
+        header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_characters");
 
     }
 
@@ -529,7 +529,7 @@ class admin_model extends CI_Model
             }
         
 
-            header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_image");
+            header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_image");
 
         
 
@@ -570,7 +570,7 @@ class admin_model extends CI_Model
             }
 
         $this->db->delete('genre', array('genre_id' => $id));
-        header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_genre");
+        header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_genre");
 
     }
     public function remove_studio($id)
@@ -582,7 +582,7 @@ class admin_model extends CI_Model
             
 
         $this->db->delete('studio', array('studio_id' => $id));
-        header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_studio");
+        header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_studio");
 
     }
     public function edit_user($id)

@@ -25,7 +25,7 @@ class Login extends CI_Controller
 	public function profile()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$data['contents'] = $this->admin_model->getProfileList($profileId);
 
 		
@@ -76,7 +76,7 @@ class Login extends CI_Controller
 	public function following()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//following/follower
@@ -112,7 +112,7 @@ class Login extends CI_Controller
 	public function follower()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//following/follower
@@ -146,9 +146,9 @@ class Login extends CI_Controller
 	public function comment()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$type = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/comments/","",$uri);
+		$type = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/comments/","",$uri);
 
 		//check if user exits in database
 		$data['existsprofile'] = $this->admin_model->getExistsProfile($profileId);
@@ -196,7 +196,7 @@ class Login extends CI_Controller
 	public function liked()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//check if user exits in database
@@ -251,9 +251,9 @@ class Login extends CI_Controller
 	public function likednumber()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$searchtype = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/liked/","",$uri);
+		$searchtype = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/liked/","",$uri);
 		$searchtype = strtok($searchtype, '/');
 		//check if user exits in database
 		$data['existsprofile'] = $this->admin_model->getExistsProfile($profileId);
@@ -321,7 +321,7 @@ class Login extends CI_Controller
 	public function disliked()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//check if user exits in database
@@ -378,9 +378,9 @@ class Login extends CI_Controller
 	public function dislikednumber()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$searchtype = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/disliked/","",$uri);
+		$searchtype = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/disliked/","",$uri);
 		$searchtype = strtok($searchtype, '/');
 
 
@@ -449,9 +449,9 @@ class Login extends CI_Controller
 	public function profilelist()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$listId = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/list/","",$uri);
+		$listId = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/list/","",$uri);
 		//check if user exits in database
 		$data['existsprofile'] = $this->admin_model->getExistsProfile($profileId);
 
@@ -700,11 +700,11 @@ class Login extends CI_Controller
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikeduser')){
-			$profileId = str_replace("/CodeIgniter-3.1.10/index.php/addlikeduser/","",$uri);
+			$profileId = str_replace("/Dynamic-Content-Library-main/index.php/addlikeduser/","",$uri);
 			$profileId = strtok($profileId, '/');
 			$this->admin_model->addlikeduser($profileId,$user_id);//add liked user
 		}else{
-			$profileId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikeduser/","",$uri);
+			$profileId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikeduser/","",$uri);
 			$profileId = strtok($profileId, '/');//remove from list liked user
 
 			$this->admin_model->adddislikeduser($profileId,$user_id);
@@ -719,12 +719,12 @@ class Login extends CI_Controller
 
 		if(strpos($uri, 'removelikeduser')){
 
-			$profileId = str_replace("/CodeIgniter-3.1.10/index.php/removelikeduser/","",$uri);
+			$profileId = str_replace("/Dynamic-Content-Library-main/index.php/removelikeduser/","",$uri);
 			$profileId = strtok($profileId, '/');
 			$this->admin_model->removelikeduser($profileId,$user_id);//add user to dislike list
 		}else{
 
-			$profileId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikeduser/","",$uri);
+			$profileId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikeduser/","",$uri);
 			$profileId = strtok($profileId, '/');
 
 			$this->admin_model->removedilikeduser($profileId,$user_id);//remove user from dislike list

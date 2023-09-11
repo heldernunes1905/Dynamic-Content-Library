@@ -25,7 +25,7 @@ if (isset($this->session->userdata['logged_in'])) {
         <th class="col-sm-2">Link</th>
         <th class="col-sm-2">Date</th>
         <th class="col-sm-1">Status</th><?php
-          if($permissions == 0  && $_SERVER['REQUEST_URI'] == "/CodeIgniter-3.1.10/index.php/profile/$user_id/forms"){?>
+          if($permissions == 0  && $_SERVER['REQUEST_URI'] == "/Dynamic-Content-Library-main/index.php/profile/$user_id/forms"){?>
           <th class="col-sm-2">Option</th>
           <?php }
         ?>
@@ -65,10 +65,10 @@ if (isset($this->session->userdata['logged_in'])) {
             <td class="col-sm-2"><?php echo $st->date;?></td>
             <td class="col-sm-1"><?php echo $st->status;?></td><?php
               if($permissions == 0){ 
-                if($st->status == "Delivered" && $_SERVER['REQUEST_URI'] == "/CodeIgniter-3.1.10/index.php/profile/$user_id/forms"){?>
+                if($st->status == "Delivered" && $_SERVER['REQUEST_URI'] == "/Dynamic-Content-Library-main/index.php/profile/$user_id/forms"){?>
               <td class="col-sm-2"><button type="button" class="btn btn-success" onclick='confirmRemoveRating(<?php echo $st->support_id?>)'>Close ticket</button></td>
               <?php 
-                }else if($st->status == "Closed" && $_SERVER['REQUEST_URI'] == "/CodeIgniter-3.1.10/index.php/profile/$user_id/forms"){ ?>
+                }else if($st->status == "Closed" && $_SERVER['REQUEST_URI'] == "/Dynamic-Content-Library-main/index.php/profile/$user_id/forms"){ ?>
               <td class="col-sm-2"><button type="button" class="btn btn-success" onclick='confirmDeleteRating(<?php echo $st->support_id?>)'>Delete ticket</button></td>
 
                 <?php }

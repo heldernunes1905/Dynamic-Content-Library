@@ -205,7 +205,7 @@ class Admin extends CI_Controller
 		
 		$result = $this->admin_model->edit_not($data);
 
-		header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_notification");
+		header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_notification");
 		/*if ($result == TRUE) {
 			$data['message_display'] = 'Registration Successfully !';
 			$data['users'] = $this->admin_model->getUsers();
@@ -271,7 +271,7 @@ class Admin extends CI_Controller
 			'permission' => $this->input->post('permission')
 		);
 		$result = $this->admin_model->edit_user($data);
-		header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_user");
+		header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_user");
 		if ($result == TRUE) {
 			$data['message_display'] = 'Registration Successfully !';
 			$data['users'] = $this->admin_model->getUsers();
@@ -319,7 +319,7 @@ class Admin extends CI_Controller
 		}
 		
 		$result = $this->admin_model->edit_staff($data);
-		header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_staff");
+		header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_staff");
 		/*if ($result == TRUE) {
 			$data['message_display'] = 'Registration Successfully !';
 			$data['users'] = $this->admin_model->getUsers();
@@ -365,7 +365,7 @@ class Admin extends CI_Controller
 		}	
 		
 		$result = $this->admin_model->edit_character($data);
-		header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_characters");
+		header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_characters");
 		/*if ($result == TRUE) {
 			$data['message_display'] = 'Registration Successfully !';
 			$data['users'] = $this->admin_model->getUsers();
@@ -764,7 +764,7 @@ class Admin extends CI_Controller
 			);
 		}
 		$result = $this->admin_model->edit_image($data_upload);
-		header("Location: http://localhost/CodeIgniter-3.1.10/index.php/edit_image");
+		header("Location: http://localhost/Dynamic-Content-Library-main/index.php/edit_image");
 	}
 
 
@@ -1019,9 +1019,9 @@ class Admin extends CI_Controller
 	public function addToList()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/additemlist/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/additemlist/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/additemlist/$profileId/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/additemlist/$profileId/","",$uri);
 
 		$this->admin_model->updateUserList($profileId,$contentId,0);
 
@@ -1031,7 +1031,7 @@ class Admin extends CI_Controller
 	//remove comment from user from profile/staff/character
 	public function removeusercomment(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$commentId = str_replace("/CodeIgniter-3.1.10/index.php/removeusercomment/","",$uri);
+		$commentId = str_replace("/Dynamic-Content-Library-main/index.php/removeusercomment/","",$uri);
 		$commentId = strtok($commentId, '/');
 
 		$this->admin_model->removeusercomment($commentId);
@@ -1041,7 +1041,7 @@ class Admin extends CI_Controller
 	//remove recom left by user
 	public function removeuserrecommendation(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$recId = str_replace("/CodeIgniter-3.1.10/index.php/removeuserrecommendation/","",$uri);
+		$recId = str_replace("/Dynamic-Content-Library-main/index.php/removeuserrecommendation/","",$uri);
 		$recId = strtok($recId, '/');
 
 		$this->admin_model->removeuserrecommendation($recId);
@@ -1066,9 +1066,9 @@ class Admin extends CI_Controller
 	public function removeitemlist()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/removeitemlist/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/removeitemlist/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/removeitemlist/$profileId/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/removeitemlist/$profileId/","",$uri);
 
 		$this->admin_model->updateUserList($profileId,$contentId,1);
 
@@ -1079,9 +1079,9 @@ class Admin extends CI_Controller
 	public function removeFromList()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$listId = str_replace("/CodeIgniter-3.1.10/index.php/removefromlist/","",$uri);
+		$listId = str_replace("/Dynamic-Content-Library-main/index.php/removefromlist/","",$uri);
 		$listId = strtok($listId, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/removefromlist/$listId/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/removefromlist/$listId/","",$uri);
 
 		$this->admin_model->removeFromList($listId,$contentId);
 		redirect($_SERVER['HTTP_REFERER']);
@@ -1092,7 +1092,7 @@ class Admin extends CI_Controller
 	public function follow()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/follow/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/follow/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		$this->admin_model->followUser($profileId,$this->session->userdata['logged_in']['user_id']);
@@ -1103,7 +1103,7 @@ class Admin extends CI_Controller
 	public function unfollow()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/unfollow/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/unfollow/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		$this->admin_model->unfollowUser($profileId,$this->session->userdata['logged_in']['user_id']);
@@ -1115,7 +1115,7 @@ class Admin extends CI_Controller
 	public function block()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/block/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/block/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		$this->admin_model->blockUser($profileId,$this->session->userdata['logged_in']['user_id']);
@@ -1126,7 +1126,7 @@ class Admin extends CI_Controller
 	public function unblock()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/unblock/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/unblock/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		$this->admin_model->unblockUser($profileId,$this->session->userdata['logged_in']['user_id']);
@@ -1138,7 +1138,7 @@ class Admin extends CI_Controller
 	public function deleteList()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$listId = str_replace("/CodeIgniter-3.1.10/index.php/deletelist","",$uri);
+		$listId = str_replace("/Dynamic-Content-Library-main/index.php/deletelist","",$uri);
 		$listId = strtok($listId, '/');
 
 		$this->admin_model->deleteList($listId);
@@ -1150,7 +1150,7 @@ class Admin extends CI_Controller
 	public function publicList()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$listId = str_replace("/CodeIgniter-3.1.10/index.php/publiclist/","",$uri);
+		$listId = str_replace("/Dynamic-Content-Library-main/index.php/publiclist/","",$uri);
 
 		$this->admin_model->privateList($listId,0);
 
@@ -1161,7 +1161,7 @@ class Admin extends CI_Controller
 	public function privateList()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$listId = str_replace("/CodeIgniter-3.1.10/index.php/privatelist/","",$uri);
+		$listId = str_replace("/Dynamic-Content-Library-main/index.php/privatelist/","",$uri);
 
 		$this->admin_model->privateList($listId,1);
 
@@ -1172,7 +1172,7 @@ class Admin extends CI_Controller
 	public function publicprofile()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/publicprofile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/publicprofile/","",$uri);
 
 		$this->admin_model->privateprofile($profileId,0);
 
@@ -1183,7 +1183,7 @@ class Admin extends CI_Controller
 	public function privateprofile()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/privateprofile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/privateprofile/","",$uri);
 
 		$this->admin_model->privateprofile($profileId,1);
 
@@ -1194,7 +1194,7 @@ class Admin extends CI_Controller
 	public function allListUser()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//check if user exits in database
@@ -1207,18 +1207,18 @@ class Admin extends CI_Controller
 
 
 		//verify the watchlist selected
-		if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/movielist"){
+		if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/movielist"){
 			$type = 1;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/showlist"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/showlist"){
 			$type = 2;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/booklist"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/booklist"){
 			$type = 3;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/gamelist"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/gamelist"){
 			$type = 4;
 		}
-		$state = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/","",$uri);
+		$state = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/","",$uri);
 		$ter = strtok($state, '/');
-		$state = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/$ter/","",$uri);
+		$state = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/$ter/","",$uri);
 		switch($ter){
 			case "movielist":
 				$type = 1;
@@ -1236,18 +1236,18 @@ class Admin extends CI_Controller
 
 		//verify the state of the list selected
 
-		if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/$ter/1"){
+		if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/$ter/1"){
 			$state = 1;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/$ter/2"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/$ter/2"){
 			$state = 2;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/$ter/3"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/$ter/3"){
 			$state = 3;
-		}else if($uri == "/CodeIgniter-3.1.10/index.php/profile/$profileId/$ter/4"){
+		}else if($uri == "/Dynamic-Content-Library-main/index.php/profile/$profileId/$ter/4"){
 			$state = 4;
 		}
 
 
-		if($state == "/CodeIgniter-3.1.10/index.php/profile/$profileId/movielist"){
+		if($state == "/Dynamic-Content-Library-main/index.php/profile/$profileId/movielist"){
 			$state = 0;
 		}
 
@@ -1426,7 +1426,7 @@ class Admin extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 
-			$user_id = str_replace("/CodeIgniter-3.1.10/index.php/upload_new_avatar/","",$_SERVER['REQUEST_URI']);
+			$user_id = str_replace("/Dynamic-Content-Library-main/index.php/upload_new_avatar/","",$_SERVER['REQUEST_URI']);
 			$avatar = $data["upload_data"]['file_name'];
 			$this->admin_model->change_avatar($user_id,$avatar);
 			redirect($_SERVER['HTTP_REFERER']);
@@ -1453,7 +1453,7 @@ class Admin extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 
-			$user_id = str_replace("/CodeIgniter-3.1.10/index.php/upload_new_banner/","",$_SERVER['REQUEST_URI']);
+			$user_id = str_replace("/Dynamic-Content-Library-main/index.php/upload_new_banner/","",$_SERVER['REQUEST_URI']);
 			$banner = $data["upload_data"]['file_name'];
 			$this->admin_model->change_banner($user_id,$banner);
 			redirect($_SERVER['HTTP_REFERER']);
@@ -1657,11 +1657,11 @@ class Admin extends CI_Controller
 	//remove ticket
 	public function removeTicket(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$ticketId = str_replace("/CodeIgniter-3.1.10/index.php/removeTicket/","",$uri);
+		$ticketId = str_replace("/Dynamic-Content-Library-main/index.php/removeTicket/","",$uri);
 		$ticketId = strtok($ticketId, '/');
 		
 
-		$this->admin_model->removeTicket($ticketId,);
+		$this->admin_model->removeTicket($ticketId);
 
 		redirect($_SERVER['HTTP_REFERER']);
 	}
@@ -1672,7 +1672,7 @@ class Admin extends CI_Controller
 	{
 
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/report/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/report/","",$uri);
 
 		$support_ticket = array(
 			'user_id' => $this->session->userdata['logged_in']['user_id'],
@@ -1680,7 +1680,7 @@ class Admin extends CI_Controller
 			'content_type' => $this->input->post('content_type'),
 			'title' => $this->input->post('title'),
 			'text' => $this->input->post('text'),
-			'link' => 'http://localhost/CodeIgniter-3.1.10/index.php/profile/'.$profileId,
+			'link' => 'http://localhost/Dynamic-Content-Library-main/index.php/profile/'.$profileId,
 			'date' => date('Y-m-d H:i:s'),
 			'status' => 1
 		);
@@ -1693,11 +1693,11 @@ class Admin extends CI_Controller
 	//delete support ticket
 	public function deleteTicket(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$ticketId = str_replace("/CodeIgniter-3.1.10/index.php/deleteTicket/","",$uri);
+		$ticketId = str_replace("/Dynamic-Content-Library-main/index.php/deleteTicket/","",$uri);
 		$ticketId = strtok($ticketId, '/');
 		
 
-		$this->admin_model->deleteTicket($ticketId,);
+		$this->admin_model->deleteTicket($ticketId);
 
 		redirect($_SERVER['HTTP_REFERER']);
 	}
@@ -1707,7 +1707,7 @@ class Admin extends CI_Controller
 	public function rating()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//check if user exits in database
@@ -1750,7 +1750,7 @@ class Admin extends CI_Controller
 	public function customlist()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 		//following/follower
 		$data['follow'] = $this->admin_model->getFollow($profileId);
@@ -1793,9 +1793,9 @@ class Admin extends CI_Controller
 	public function addusercommentprofile(){
 		$review = $_GET['comment'];
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/addusercommentprofile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/addusercommentprofile/","",$uri);
 		$profileId = strtok($profileId, '/');
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addusercommentprofile/$profileId/userid/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addusercommentprofile/$profileId/userid/","",$uri);
 		$user_id = strtok($user_id, '?');
 
 
@@ -1806,9 +1806,9 @@ class Admin extends CI_Controller
 	//remove comment from profile of a nother user
 	public function removesprofilecomment(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removesprofilecomment/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removesprofilecomment/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/removesprofilecomment/$user_id/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/removesprofilecomment/$user_id/","",$uri);
 		$this->admin_model->addprofilecomment($user_id,$profileId,"fwhyalhiçufoijj3qop9e4u018rhoirFHUAUIFLfkfkuNKUWKNUewcuknec");
 		redirect($_SERVER['HTTP_REFERER']);
 	}
@@ -1818,7 +1818,7 @@ class Admin extends CI_Controller
 	public function recommendations()
 	{
 		$uri = $_SERVER['REQUEST_URI']; 
-		$profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+		$profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 		$profileId = strtok($profileId, '/');
 
 		//check if user exits in database

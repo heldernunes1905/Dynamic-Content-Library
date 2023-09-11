@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 if (isset($this->session->userdata['logged_in'])) {
 
-    header("location: http://localhost/CodeIgniter-3.1.10/index.php/login");
+    header("location: http://localhost/Dynamic-Content-Library-main/index.php/login");
 }
 
   $this->load->view('header/top');

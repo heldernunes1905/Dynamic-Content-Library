@@ -1,6 +1,6 @@
 <?php
 $uri = $_SERVER['REQUEST_URI']; 
-$user_id_prof = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+$user_id_prof = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 $user_id_prof = strtok($user_id_prof,"/");
 
 if (isset($this->session->userdata['logged_in'])) {
@@ -40,7 +40,7 @@ if(($key = array_search($user_id, $checkuserblocked)) !== false){
 
    <?php 
    $uri = $_SERVER['REQUEST_URI']; 
-   $profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+   $profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
    $profileId = strtok($profileId, '/');
    ?>
 

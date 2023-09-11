@@ -22,9 +22,9 @@ if(($key = array_search($user_id, $checkuserblocked)) !== false){
 
    <?php 
         $uri = $_SERVER['REQUEST_URI']; 
-        $profileId = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+        $profileId = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
         $profileId = strtok($profileId, '/');
-        $finalword = str_replace("/CodeIgniter-3.1.10/index.php/profile/$profileId/","",$uri);
+        $finalword = str_replace("/Dynamic-Content-Library-main/index.php/profile/$profileId/","",$uri);
         if($state[0]->profile_state == 1){?>
 
         <div class="container-fluid no-padding">
