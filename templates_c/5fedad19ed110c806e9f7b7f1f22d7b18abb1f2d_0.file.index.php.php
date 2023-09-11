@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.28, created on 2019-05-07 11:59:02
-  from "D:\xampp1\htdocs\CodeIgniter-3.1.10\index.php" */
+  from "D:\xampp1\htdocs\Dynamic-Content-Library-main\index.php" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
@@ -10,7 +10,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
     '5fedad19ed110c806e9f7b7f1f22d7b18abb1f2d' => 
     array (
-      0 => 'D:\\xampp1\\htdocs\\CodeIgniter-3.1.10\\index.php',
+      0 => 'D:\\xampp1\\htdocs\\Dynamic-Content-Library-main\\index.php',
       1 => 1547653775,
       2 => 'file',
     ),

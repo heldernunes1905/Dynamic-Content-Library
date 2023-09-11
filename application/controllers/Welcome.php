@@ -77,7 +77,7 @@ class Welcome extends CI_Controller {
 		//get type of content being viewd to them get stuff related to it
 		
 		$uri = $_SERVER['REQUEST_URI']; 
-		$type = str_replace("/CodeIgniter-3.1.10/index.php/","",$uri);
+		$type = str_replace("/Dynamic-Content-Library-main/index.php/","",$uri);
 		$type = strtok($type, '/');
 
 		if($type == "movie"){
@@ -132,7 +132,7 @@ class Welcome extends CI_Controller {
 
 		//get the type of content being viewed and then get all the content for that one type
 		$uri = $_SERVER['REQUEST_URI']; 
-		$type_content = str_replace("/CodeIgniter-3.1.10/index.php/","",$uri);
+		$type_content = str_replace("/Dynamic-Content-Library-main/index.php/","",$uri);
 		$type_content = strtok($type_content, '/');
 
 
@@ -256,7 +256,7 @@ class Welcome extends CI_Controller {
 
 		//get from url word to specify type of cntent being viewd
 		$uri = $_SERVER['REQUEST_URI']; 
-		$type_content = str_replace("/CodeIgniter-3.1.10/index.php/","",$uri);
+		$type_content = str_replace("/Dynamic-Content-Library-main/index.php/","",$uri);
 		$type_content = strtok($type_content, '/');
 
 		if($type_content == "recommended_movie"){
@@ -295,7 +295,7 @@ class Welcome extends CI_Controller {
 
 		//get from url content being viewed
 		$uri = $_SERVER['REQUEST_URI']; 
-		$type_content = str_replace("/CodeIgniter-3.1.10/index.php/","",$uri);
+		$type_content = str_replace("/Dynamic-Content-Library-main/index.php/","",$uri);
 		$type_content = strtok($type_content, '/');
 
 		
@@ -334,7 +334,7 @@ class Welcome extends CI_Controller {
 
 		//list of content in a particular studio
 		$uri = $_SERVER['REQUEST_URI']; 
-		$genre = str_replace("/CodeIgniter-3.1.10/index.php/studio/","",$uri);
+		$genre = str_replace("/Dynamic-Content-Library-main/index.php/studio/","",$uri);
 		$remove = str_replace("%20"," ",$genre);
 		$data['contents'] = $this->model->getStudioContentList($remove);
 
@@ -378,7 +378,7 @@ class Welcome extends CI_Controller {
 
 		//get genre being viewed
 		$uri = $_SERVER['REQUEST_URI']; 
-		$genre = str_replace("/CodeIgniter-3.1.10/index.php/genre/","",$uri);
+		$genre = str_replace("/Dynamic-Content-Library-main/index.php/genre/","",$uri);
 		$remove = str_replace("%20"," ",$genre);
 
 		//get info from genre
@@ -406,7 +406,7 @@ class Welcome extends CI_Controller {
 
 		//using id get info about content being viewd and the genre
 		$uri = $_SERVER['REQUEST_URI']; 
-		$id = str_replace("/CodeIgniter-3.1.10/index.php/display/","",$uri);
+		$id = str_replace("/Dynamic-Content-Library-main/index.php/display/","",$uri);
 		$data['contents'] = $this->model->getdisplayinfo($id);
 		$data['genres'] = $this->model->getdisplaygenre($id);
 
@@ -484,7 +484,7 @@ class Welcome extends CI_Controller {
 	public function staff(){
 		//get staff belonging to a particular piece of content
 		$uri = $_SERVER['REQUEST_URI']; 
-		$ct_staff = str_replace("/CodeIgniter-3.1.10/index.php/display/","",$uri);
+		$ct_staff = str_replace("/Dynamic-Content-Library-main/index.php/display/","",$uri);
 		$contentId = strtok($ct_staff, '/');
 		$data['contents'] = $this->model->getStaffmembers($contentId);
 
@@ -512,7 +512,7 @@ class Welcome extends CI_Controller {
 
 		//comment page from content
 		$uri = $_SERVER['REQUEST_URI']; 
-		$id = str_replace("/CodeIgniter-3.1.10/index.php/display/","",$uri);
+		$id = str_replace("/Dynamic-Content-Library-main/index.php/display/","",$uri);
 		$id = strtok($id, '/');
 
 		$data['contentinfo'] = $this->model->getdisplayinfo($id);
@@ -548,7 +548,7 @@ class Welcome extends CI_Controller {
 
 		//comment page in characters page
 		$uri = $_SERVER['REQUEST_URI']; 
-		$characterId = str_replace("/CodeIgniter-3.1.10/index.php/characters/","",$uri);
+		$characterId = str_replace("/Dynamic-Content-Library-main/index.php/characters/","",$uri);
 		$characterId = strtok($characterId, '/');
 		$data['contents'] = $this->model->getCharacterInfo($characterId);//get character info
 		$data['chars'] = $this->model->getStaffcharmembers($characterId);//staff that played that character
@@ -579,7 +579,7 @@ class Welcome extends CI_Controller {
 	public function staffreview(){
 		//staff comment page
 		$uri = $_SERVER['REQUEST_URI']; 
-		$staffId = str_replace("/CodeIgniter-3.1.10/index.php/staff/","",$uri);
+		$staffId = str_replace("/Dynamic-Content-Library-main/index.php/staff/","",$uri);
 		$staffId = strtok($staffId, '/');
 
 
@@ -614,11 +614,11 @@ class Welcome extends CI_Controller {
 		//changing rating on a content, getting user id, content and the rating and then using those
 		//3 parameters update in the databe
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/ratinguserchange/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/ratinguserchange/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/ratinguserchange/$user_id/content/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/ratinguserchange/$user_id/content/","",$uri);
 		$contentId = strtok($contentId, '/');
-		$rating = str_replace("/CodeIgniter-3.1.10/index.php/ratinguserchange/$user_id/content/$contentId/rating/","",$uri);
+		$rating = str_replace("/Dynamic-Content-Library-main/index.php/ratinguserchange/$user_id/content/$contentId/rating/","",$uri);
 
 		$this->model->changerating($user_id,$contentId,$rating);
 		redirect($_SERVER['HTTP_REFERER']);
@@ -628,9 +628,9 @@ class Welcome extends CI_Controller {
 		//get user and contentid from the url and update rating to 0 by "removing it"
 		//done this way bc review text shares same table so instead of deleting comment just changes value
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removerating/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removerating/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/removerating/$user_id/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/removerating/$user_id/","",$uri);
 
 		$this->model->changerating($user_id,$contentId,0);
 		redirect($_SERVER['HTTP_REFERER']);
@@ -642,9 +642,9 @@ class Welcome extends CI_Controller {
 		$review = $_GET['comment'];
 		$title = $_GET['title'];
 		$uri = $_SERVER['REQUEST_URI']; 
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/addcontentcomment/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/addcontentcomment/","",$uri);
 		$contentId = strtok($contentId, '/');
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addcontentcomment/$contentId/userid/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addcontentcomment/$contentId/userid/","",$uri);
 		$user_id = strtok($user_id, '?');
 
 		$this->model->addcommentContent($user_id,$contentId,$review,$title);
@@ -656,11 +656,11 @@ class Welcome extends CI_Controller {
 	public function addwatchlist(){
 		
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addwatchlist/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addwatchlist/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/addwatchlist/$user_id/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/addwatchlist/$user_id/","",$uri);
 		$contentId = strtok($contentId, '/');
-		$watchlist = str_replace("/CodeIgniter-3.1.10/index.php/addwatchlist/$user_id/$contentId/","",$uri);
+		$watchlist = str_replace("/Dynamic-Content-Library-main/index.php/addwatchlist/$user_id/$contentId/","",$uri);
 		$watchlist = strtok($watchlist, '/');
 
 		if($watchlist == 0){
@@ -676,11 +676,11 @@ class Welcome extends CI_Controller {
 	public function addwatchedepisodes(){
 		
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addwatchedepisodes/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addwatchedepisodes/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/addwatchedepisodes/$user_id/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/addwatchedepisodes/$user_id/","",$uri);
 		$contentId = strtok($contentId, '/');
-		$episodes = str_replace("/CodeIgniter-3.1.10/index.php/addwatchedepisodes/$user_id/$contentId/","",$uri);
+		$episodes = str_replace("/Dynamic-Content-Library-main/index.php/addwatchedepisodes/$user_id/$contentId/","",$uri);
 		$episodes = strtok($episodes, '/');
 
 		
@@ -699,9 +699,9 @@ class Welcome extends CI_Controller {
 	//everything besides that string will update comment
 	public function removecommentcontent(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removecommentcontent/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removecommentcontent/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$contentId = str_replace("/CodeIgniter-3.1.10/index.php/removecommentcontent/$user_id/","",$uri);
+		$contentId = str_replace("/Dynamic-Content-Library-main/index.php/removecommentcontent/$user_id/","",$uri);
 
 		$this->model->addcommentContent($user_id,$contentId,"fwhyalhiçufoijj3qop9e4u018rhoirFHUAUIFLfkfkuNKUWKNUewcuknec",0);
 		
@@ -714,9 +714,9 @@ class Welcome extends CI_Controller {
 		$title = $_GET['title'];
 
 		$uri = $_SERVER['REQUEST_URI']; 
-		$characterId = str_replace("/CodeIgniter-3.1.10/index.php/addcharactercontent/","",$uri);
+		$characterId = str_replace("/Dynamic-Content-Library-main/index.php/addcharactercontent/","",$uri);
 		$characterId = strtok($characterId, '/');
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addcharactercontent/$characterId/userid/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addcharactercontent/$characterId/userid/","",$uri);
 		$user_id = strtok($user_id, '?');
 
 		$this->model->addcharacterContent($user_id,$characterId,$review,$title);
@@ -729,9 +729,9 @@ class Welcome extends CI_Controller {
 	//everything besides that string will update comment
 	public function removecharactercontent(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removecharactercontent/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removecharactercontent/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removecharactercontent/$user_id/","",$uri);
+		$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removecharactercontent/$user_id/","",$uri);
 
 		$this->model->addcharacterContent($user_id,$characterId,"fwhyalhiçufoijj3qop9e4u018rhoirFHUAUIFLfkfkuNKUWKNUewcuknec","fasf");
 		redirect($_SERVER['HTTP_REFERER']);
@@ -742,9 +742,9 @@ class Welcome extends CI_Controller {
 		$review = $_GET['comment'];
 		$title = $_GET['title'];
 		$uri = $_SERVER['REQUEST_URI']; 
-		$staffId = str_replace("/CodeIgniter-3.1.10/index.php/addstaffcontent/","",$uri);
+		$staffId = str_replace("/Dynamic-Content-Library-main/index.php/addstaffcontent/","",$uri);
 		$staffId = strtok($staffId, '/');
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/addstaffcontent/$staffId/userid/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/addstaffcontent/$staffId/userid/","",$uri);
 		$user_id = strtok($user_id, '?');
 
 		$this->model->addstaffcontent($user_id,$staffId,$review,$title);
@@ -757,9 +757,9 @@ class Welcome extends CI_Controller {
 	//everything besides that string will update comment
 	public function removestaffcontent(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removestaffcontent/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removestaffcontent/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$staffId = str_replace("/CodeIgniter-3.1.10/index.php/removestaffcontent/$user_id/","",$uri);
+		$staffId = str_replace("/Dynamic-Content-Library-main/index.php/removestaffcontent/$user_id/","",$uri);
 
 		$this->model->addstaffcontent($user_id,$staffId,"fwhyalhiçufoijj3qop9e4u018rhoirFHUAUIFLfkfkuNKUWKNUewcuknec","hbuikasf");
 		redirect($_SERVER['HTTP_REFERER']);
@@ -769,7 +769,7 @@ class Welcome extends CI_Controller {
 	//show staff page
 	public function staffshow(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$staffId = str_replace("/CodeIgniter-3.1.10/index.php/staff/","",$uri);
+		$staffId = str_replace("/Dynamic-Content-Library-main/index.php/staff/","",$uri);
 
 		//get staff info and characters they played
 		$data['contents'] = $this->model->getStaffInfo($staffId);
@@ -810,7 +810,7 @@ class Welcome extends CI_Controller {
 	//get charactes in a content
 	public function characters(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$ct_staff = str_replace("/CodeIgniter-3.1.10/index.php/display/","",$uri);
+		$ct_staff = str_replace("/Dynamic-Content-Library-main/index.php/display/","",$uri);
 		$contentId = strtok($ct_staff, '/');
 		//char info
 		$data['contents'] = $this->model->getCharacters($contentId);
@@ -844,7 +844,7 @@ class Welcome extends CI_Controller {
 	//notification page, gets notifs for logged in user
 	public function notification(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/notification/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/notification/","",$uri);
 		if (isset($this->session->userdata['logged_in'])) {
 			$data['notification'] = $this->model->getNotification($this->session->userdata['logged_in']['user_id']);
 		}
@@ -865,7 +865,7 @@ class Welcome extends CI_Controller {
 	//remove one notif that the user selected
 	public function removenotif(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$not_id = str_replace("/CodeIgniter-3.1.10/index.php/removenotif/","",$uri);
+		$not_id = str_replace("/Dynamic-Content-Library-main/index.php/removenotif/","",$uri);
 		$this->model->removenotif($not_id);
 
 		redirect($_SERVER['HTTP_REFERER']);
@@ -874,7 +874,7 @@ class Welcome extends CI_Controller {
 	//remove all notif from a user
 	public function removenotifuser(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$not_id = str_replace("/CodeIgniter-3.1.10/index.php/removenotifuser/","",$uri);
+		$not_id = str_replace("/Dynamic-Content-Library-main/index.php/removenotifuser/","",$uri);
 		$this->model->removenotifuser($not_id);
 
 		redirect($_SERVER['HTTP_REFERER']);
@@ -883,7 +883,7 @@ class Welcome extends CI_Controller {
 	//character show page, shows all info related to them, user can like/dislike and leave comment there
 	public function charactersshow(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$characterId = str_replace("/CodeIgniter-3.1.10/index.php/characters/","",$uri);
+		$characterId = str_replace("/Dynamic-Content-Library-main/index.php/characters/","",$uri);
 		$data['contents'] = $this->model->getCharacterInfo($characterId);
 		$data['chars'] = $this->model->getStaffcharmembers($characterId);
 		$data['personalcomment'] = array();
@@ -994,7 +994,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$uri = $_SERVER['REQUEST_URI']; 
-		$forum_id = str_replace("/CodeIgniter-3.1.10/index.php/forum/","",$uri);
+		$forum_id = str_replace("/Dynamic-Content-Library-main/index.php/forum/","",$uri);
 		$forum_id = strtok($forum_id, '/');
 
 		if (isset($this->session->userdata['logged_in']) && $this->session->userdata['logged_in']['permission'] == 0) {
@@ -1031,7 +1031,7 @@ class Welcome extends CI_Controller {
 	public function addthread(){
 	
 		$uri = $_SERVER['REQUEST_URI']; 
-		$forum_id = str_replace("/CodeIgniter-3.1.10/index.php/addthread/","",$uri);
+		$forum_id = str_replace("/Dynamic-Content-Library-main/index.php/addthread/","",$uri);
 		$forum_id = strtok($forum_id, '/');
 
 		$description = $_GET['description'];
@@ -1069,7 +1069,7 @@ class Welcome extends CI_Controller {
 	public function modifythread(){
 	
 		$uri = $_SERVER['REQUEST_URI']; 
-		$forum_id = str_replace("/CodeIgniter-3.1.10/index.php/addthread/","",$uri);
+		$forum_id = str_replace("/Dynamic-Content-Library-main/index.php/addthread/","",$uri);
 		$forum_id = strtok($forum_id, '/');
 
 		$description = $_GET['description'];
@@ -1091,7 +1091,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$uri = $_SERVER['REQUEST_URI']; 
-		$thread_id = str_replace("/CodeIgniter-3.1.10/index.php/forum/thread/","",$uri);
+		$thread_id = str_replace("/Dynamic-Content-Library-main/index.php/forum/thread/","",$uri);
 		$thread_id = strtok($thread_id, '/');
 
 		$data['threadinsidename'] = $this->model->getThreadInsideName($thread_id);
@@ -1132,7 +1132,7 @@ class Welcome extends CI_Controller {
 
 		$comment = $_GET['comment'];
 		$uri = $_SERVER['REQUEST_URI']; 
-		$thread_id = str_replace("/CodeIgniter-3.1.10/index.php/addthreadcomment/","",$uri);
+		$thread_id = str_replace("/Dynamic-Content-Library-main/index.php/addthreadcomment/","",$uri);
 		$thread_id = strtok($thread_id, '?');
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 		$date = date('Y-m-d H:i:s');
@@ -1143,9 +1143,9 @@ class Welcome extends CI_Controller {
 	//remove comment on thread
 	public function removecommentforum(){
 		$uri = $_SERVER['REQUEST_URI']; 
-		$user_id = str_replace("/CodeIgniter-3.1.10/index.php/removecommentforum/","",$uri);
+		$user_id = str_replace("/Dynamic-Content-Library-main/index.php/removecommentforum/","",$uri);
 		$user_id = strtok($user_id, '/');
-		$comment_id = str_replace("/CodeIgniter-3.1.10/index.php/removecommentforum/$user_id/","",$uri);
+		$comment_id = str_replace("/Dynamic-Content-Library-main/index.php/removecommentforum/$user_id/","",$uri);
 
 		$this->model->addthreadcomment($user_id,"fwhyalhiçufoijj3qop9e4u018rhoirFHUAUIFLfkfkuNKUWKNUewcuknec",$comment_id,0);
 		
@@ -1160,11 +1160,11 @@ class Welcome extends CI_Controller {
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikedcharacter')){
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/addlikedcharacter/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/addlikedcharacter/","",$uri);
 		$characterId = strtok($characterId, '/');
 			$this->model->addcharacterliked($characterId,$user_id);
 		}else{
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikedcharacter/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikedcharacter/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->addcharacterdisliked($characterId,$user_id);
@@ -1181,12 +1181,12 @@ class Welcome extends CI_Controller {
 		echo basename($uri);
 		if(strpos($uri, 'removelikedcharacter')){
 
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removelikedcharacter/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removelikedcharacter/","",$uri);
 			$characterId = strtok($characterId, '/');
 			$this->model->removelikedcharacter($characterId,$user_id);
 		}else{
 
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikedcharacter/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikedcharacter/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->removedilikedcharacter($characterId,$user_id);
@@ -1203,11 +1203,11 @@ class Welcome extends CI_Controller {
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikedstaff')){
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/addlikedstaff/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/addlikedstaff/","",$uri);
 			$characterId = strtok($characterId, '/');
 			$this->model->addstaffliked($characterId,$user_id);
 		}else{
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikedstaff/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikedstaff/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->addstaffdisliked($characterId,$user_id);
@@ -1223,12 +1223,12 @@ class Welcome extends CI_Controller {
 
 		if(strpos($uri, 'removelikedstaff')){
 
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removelikedstaff/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removelikedstaff/","",$uri);
 			$characterId = strtok($characterId, '/');
 			$this->model->removelikedstaff($characterId,$user_id);
 		}else{
 			
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikedstaff/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikedstaff/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->removedilikedstaff($characterId,$user_id);
@@ -1244,11 +1244,11 @@ class Welcome extends CI_Controller {
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikedcontent')){
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/addlikedcontent/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/addlikedcontent/","",$uri);
 		$characterId = strtok($characterId, '/');
 			$this->model->addlikedcontent($characterId,$user_id);
 		}else{
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikedcontent/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikedcontent/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->adddislikedcontent($characterId,$user_id);
@@ -1265,12 +1265,12 @@ class Welcome extends CI_Controller {
 		echo basename($uri);
 		if(strpos($uri, 'removelikedcontent')){
 
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removelikedcontent/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removelikedcontent/","",$uri);
 			$characterId = strtok($characterId, '/');
 			$this->model->removelikedcontent($characterId,$user_id);
 		}else{
 
-			$characterId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikedcontent/","",$uri);
+			$characterId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikedcontent/","",$uri);
 			$characterId = strtok($characterId, '/');
 
 			$this->model->removedilikedcontent($characterId,$user_id);
@@ -1287,11 +1287,11 @@ class Welcome extends CI_Controller {
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikedstudio')){
-			$studioId = str_replace("/CodeIgniter-3.1.10/index.php/addlikedstudio/","",$uri);
+			$studioId = str_replace("/Dynamic-Content-Library-main/index.php/addlikedstudio/","",$uri);
 			$studioId = strtok($studioId, '/');
 			$this->model->addlikedstudio($studioId,$user_id);
 		}else{
-			$studioId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikedstudio/","",$uri);
+			$studioId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikedstudio/","",$uri);
 			$studioId = strtok($studioId, '/');
 
 			$this->model->adddislikedstudio($studioId,$user_id);
@@ -1307,12 +1307,12 @@ class Welcome extends CI_Controller {
 
 		if(strpos($uri, 'removelikedstudio')){
 
-			$studioId = str_replace("/CodeIgniter-3.1.10/index.php/removelikedstudio/","",$uri);
+			$studioId = str_replace("/Dynamic-Content-Library-main/index.php/removelikedstudio/","",$uri);
 			$studioId = strtok($studioId, '/');
 			$this->model->removelikedstudio($studioId,$user_id);
 		}else{
 
-			$studioId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikedstudio/","",$uri);
+			$studioId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikedstudio/","",$uri);
 			$studioId = strtok($studioId, '/');
 
 			$this->model->removedilikedstudio($studioId,$user_id);
@@ -1328,11 +1328,11 @@ class Welcome extends CI_Controller {
 		$user_id = $this->session->userdata['logged_in']['user_id'];
 
 		if(strpos($uri, 'addlikedgenre')){
-			$genreId = str_replace("/CodeIgniter-3.1.10/index.php/addlikedgenre/","",$uri);
+			$genreId = str_replace("/Dynamic-Content-Library-main/index.php/addlikedgenre/","",$uri);
 			$genreId = strtok($genreId, '/');
 			$this->model->addlikedgenre($genreId,$user_id);
 		}else{
-			$genreId = str_replace("/CodeIgniter-3.1.10/index.php/adddislikedgenre/","",$uri);
+			$genreId = str_replace("/Dynamic-Content-Library-main/index.php/adddislikedgenre/","",$uri);
 			$genreId = strtok($genreId, '/');
 
 			$this->model->adddislikedgenre($genreId,$user_id);
@@ -1348,12 +1348,12 @@ class Welcome extends CI_Controller {
 
 		if(strpos($uri, 'removelikedgenre')){
 
-			$genreId = str_replace("/CodeIgniter-3.1.10/index.php/removelikedgenre/","",$uri);
+			$genreId = str_replace("/Dynamic-Content-Library-main/index.php/removelikedgenre/","",$uri);
 			$genreId = strtok($genreId, '/');
 			$this->model->removelikedgenre($genreId,$user_id);
 		}else{
 
-			$genreId = str_replace("/CodeIgniter-3.1.10/index.php/removedilikedgenre/","",$uri);
+			$genreId = str_replace("/Dynamic-Content-Library-main/index.php/removedilikedgenre/","",$uri);
 			$genreId = strtok($genreId, '/');
 
 			$this->model->removedilikedgenre($genreId,$user_id);

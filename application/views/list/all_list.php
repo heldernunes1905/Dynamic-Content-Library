@@ -10,11 +10,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <?php
 
 $uri = $_SERVER['REQUEST_URI']; 
-$studio = str_replace("/CodeIgniter-3.1.10/index.php/studio/","",$uri);
-$studiourl = "/CodeIgniter-3.1.10/index.php/studio/";
+$studio = str_replace("/Dynamic-Content-Library-main/index.php/studio/","",$uri);
+$studiourl = "/Dynamic-Content-Library-main/index.php/studio/";
 
-$genre = str_replace("/CodeIgniter-3.1.10/index.php/genre/","",$uri);
-$genreurl = "/CodeIgniter-3.1.10/index.php/genre/";?>
+$genre = str_replace("/Dynamic-Content-Library-main/index.php/genre/","",$uri);
+$genreurl = "/Dynamic-Content-Library-main/index.php/genre/";?>
 
 
 <br><br>

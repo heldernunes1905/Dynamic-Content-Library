@@ -13,11 +13,11 @@ if (isset($this->session->userdata['logged_in'])) {
   
 }
 $uri = $_SERVER['REQUEST_URI']; 
-$user_id_prof = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+$user_id_prof = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 $user_id_prof = strtok($user_id_prof, '/');
 
 $profileId = strtok($user_id_prof, '/');
-if($profileId == "CodeIgniter-3.1.10"){
+if($profileId == "Dynamic-Content-Library-main"){
   $profileId = $user_id;
 }
 
@@ -143,7 +143,7 @@ function confirmActionListpublic(public) {
 
     //see if its in user page
     /*$test = $_SERVER['REQUEST_URI'];
-    $expected_result = '/CodeIgniter-3.1.10/index.php/login_enter';
+    $expected_result = '/Dynamic-Content-Library-main/index.php/login_enter';
     $test_name = 'check to see if user page';
     echo $this->unit->run($test, $expected_result, $test_name);*/
     ?>
@@ -384,7 +384,7 @@ function confirmActionListpublic(public) {
           </div>
           <?php
          
-        }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/CodeIgniter-3.1.10/index.php/profile/$profileId"){
+        }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/Dynamic-Content-Library-main/index.php/profile/$profileId"){
           ?>
 
 <div class="img__wrap banner_wrap" data-target='#Modalbanner' data-toggle='modal' id="banner" data-banner="<?php echo "../../../../uploads/$prof->profile_banner" ?>"><?php
@@ -775,7 +775,7 @@ function confirmActionListpublic(public) {
 
           </div>
         <?php
-      }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/CodeIgniter-3.1.10/index.php/profile/$profileId"){
+      }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/Dynamic-Content-Library-main/index.php/profile/$profileId"){
         ?>
         <div class="" id="banner"><?php
           echo "<img src='../../../../uploads/$prof->profile_banner'  class='img__img'  alt='banner' height='200px' width='100%'><br>";
@@ -983,7 +983,7 @@ if(!empty($state[0])){
   if($user_id_prof == $user_id){
     $state[0]->profile_state = 1;
   }
-  if($uri == "/CodeIgniter-3.1.10/index.php/user_info"){
+  if($uri == "/Dynamic-Content-Library-main/index.php/user_info"){
     $profileId = $user_id;
   }
   if($state[0]->profile_state == 0 && $user_id != $profileId){

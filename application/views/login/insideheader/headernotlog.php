@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 $permission = 0;
 $uri = $_SERVER['REQUEST_URI']; 
-$user_id_prof = str_replace("/CodeIgniter-3.1.10/index.php/profile/","",$uri);
+$user_id_prof = str_replace("/Dynamic-Content-Library-main/index.php/profile/","",$uri);
 $profileId = strtok($user_id_prof, '/');
 $user_id = $profileId;
 
@@ -14,7 +14,7 @@ $this->load->view('header/top');
     
     //see if its in user page
     /*$test = $_SERVER['REQUEST_URI'];
-    $expected_result = '/CodeIgniter-3.1.10/index.php/login_enter';
+    $expected_result = '/Dynamic-Content-Library-main/index.php/login_enter';
     $test_name = 'check to see if user page';
     echo $this->unit->run($test, $expected_result, $test_name);*/
     ?>
@@ -168,7 +168,7 @@ $this->load->view('header/top');
 
           </div>
         <?php
-      }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/CodeIgniter-3.1.10/index.php/profile/$profileId"){
+      }else if($lastslashurl == "/$listtype" && $profileId == $listtype && $uri != "/Dynamic-Content-Library-main/index.php/profile/$profileId"){
         ?>
         <div class="img__wrap" data-target='#Modalbanner' data-toggle='modal' id="banner"><?php
           echo "<img src='../../../../uploads/$prof->profile_banner'  class='img__img'  alt='banner' height='200px' width='100%'><br>";

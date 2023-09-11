@@ -26,10 +26,10 @@ document.getElementById("full").className = "active";
 
   <?php
     $uri = $_SERVER['REQUEST_URI']; 
-    $staffId = str_replace("/CodeIgniter-3.1.10/index.php/staff/","",$uri);
+    $staffId = str_replace("/Dynamic-Content-Library-main/index.php/staff/","",$uri);
     $staffId = strtok($staffId, '/');
 
-    $staffurl = "/CodeIgniter-3.1.10/index.php/staff/$staffId";
+    $staffurl = "/Dynamic-Content-Library-main/index.php/staff/$staffId";
     $reviewurl = $staffurl."/review";
   ?>
 

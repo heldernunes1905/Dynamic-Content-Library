@@ -25,10 +25,10 @@ document.getElementById("full").className = "active";
 	<br><br>
   <?php
     $uri = $_SERVER['REQUEST_URI']; 
-    $characterId = str_replace("/CodeIgniter-3.1.10/index.php/characters/","",$uri);
+    $characterId = str_replace("/Dynamic-Content-Library-main/index.php/characters/","",$uri);
     $characterId = strtok($characterId, '/');
 
-    $charurl = "/CodeIgniter-3.1.10/index.php/characters/$characterId";
+    $charurl = "/Dynamic-Content-Library-main/index.php/characters/$characterId";
     $reviewurl = $charurl."/review";
   ?>
   

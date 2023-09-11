@@ -10,7 +10,7 @@
     $permissions = 2;
   }
   $uri = $_SERVER['REQUEST_URI']; 
-  $forum = str_replace("/CodeIgniter-3.1.10/index.php/forum/","",$uri);
+  $forum = str_replace("/Dynamic-Content-Library-main/index.php/forum/","",$uri);
   $forum = strtok($forum, '/');
   ?>
 

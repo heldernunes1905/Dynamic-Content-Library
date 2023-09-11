@@ -14,7 +14,7 @@ if (isset($this->session->userdata['logged_in'])) {
 
 
 $uri = $_SERVER['REQUEST_URI']; 
-$thread_id = str_replace("/CodeIgniter-3.1.10/index.php/forum/thread/","",$uri);
+$thread_id = str_replace("/Dynamic-Content-Library-main/index.php/forum/thread/","",$uri);
 $thread_id = strtok($thread_id, '/');
 ?>
 

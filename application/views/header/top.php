@@ -150,7 +150,7 @@
 		<?php 
 		$uri = $_SERVER['REQUEST_URI']; 
 
-		/*if(basename($uri) == "CodeIgniter-3.1.10"){?>
+		/*if(basename($uri) == "Dynamic-Content-Library-main"){?>
 			<img src="uploads/home.png" width=100% height= 50px></img>
 		<?php }else if(basename($uri) == "movie"){?>
 			<img src="../uploads/download.png" width=100% height= 100px></img>
@@ -280,56 +280,56 @@
 
 	//check if redirected to the homepage
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/';
+	$expected_result = '/Dynamic-Content-Library-main/';
 	$test_name = 'Check correct home page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the allmovies page
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/movie';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/movie';
 	$test_name = 'Check correct movie page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the shows page
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/show';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/show';
 	$test_name = 'Check correct movie page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the games page
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/game';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/game';
 	$test_name = 'Check correct movie page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the books page
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/book';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/book';
 	$test_name = 'Check correct movie page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the login
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/login';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/login';
 	$test_name = 'Check correct login page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the register
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/register';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/register';
 	$test_name = 'Check correct register page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to logout
 	/*$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/logout';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/logout';
 	$test_name = 'Check correct logout page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 
 	//check if redirected to the profile
 	/*
 	$test = $_SERVER['REQUEST_URI'];
-	$expected_result = '/CodeIgniter-3.1.10/index.php/forum';
+	$expected_result = '/Dynamic-Content-Library-main/index.php/forum';
 	$test_name = 'Check correct profile page';
 	echo $this->unit->run($test, $expected_result, $test_name);*/
 		

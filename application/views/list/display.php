@@ -133,10 +133,10 @@ label:hover ~ input:checked ~ label /* highlight previous selected stars */ { co
 
 <?php
 $uri = $_SERVER['REQUEST_URI']; 
-$contentId = str_replace("/CodeIgniter-3.1.10/index.php/display/","",$uri);
+$contentId = str_replace("/Dynamic-Content-Library-main/index.php/display/","",$uri);
 $contentId = strtok($contentId, '/');
 
-$contenturl = "/CodeIgniter-3.1.10/index.php/display/$contentId";
+$contenturl = "/Dynamic-Content-Library-main/index.php/display/$contentId";
 $staffurl = $contenturl."/staff";
 $charactersurl = $contenturl."/characters";
 $reviewurl = $contenturl."/review";

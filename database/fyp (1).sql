@@ -592,7 +592,7 @@ INSERT INTO `supportform` (`support_id`, `user_id`, `type`, `content_type`, `tit
 (2, 1, 0, '', 'fasdghbfds', 'rewafsghccbfds', 'link 2', '2023-01-31 21:31:52', 1),
 (3, 6, 0, '', 'sfaxzc', 'fasfasf', 'link 3', '2023-01-29 21:32:09', 0),
 (4, 6, 0, '', 'afssaf', 'asfas', 'link 4', '2023-01-11 21:32:09', 0),
-(9, 1, 3, 'Offensive', 'fasf', 'he called me a meany weeny tiny handsy poopy head', 'http://localhost/CodeIgniter-3.1.10/index.php/profile/10', '2023-03-06 21:33:51', 1),
+(9, 1, 3, 'Offensive', 'fasf', 'he called me a meany weeny tiny handsy poopy head', 'http://localhost/Dynamic-Content-Library-main/index.php/profile/10', '2023-03-06 21:33:51', 1),
 (10, 8, 2, 'Movie', 'pirata', 'das', 'nioasoigoi', '2023-03-19 01:12:37', 1);
 
 -- --------------------------------------------------------
