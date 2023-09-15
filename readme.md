@@ -1,4 +1,4 @@
-Used CodeIgniter 3.1.10
+Used CodeIgniter 3.1.10 || DATABASE IS IN DATABASE FOLDER
 
 Very simple way for user to create their own watchlist.
 In the HomePage User will get a the newest movies,shows, games and books
